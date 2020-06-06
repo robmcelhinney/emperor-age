@@ -6,25 +6,6 @@ import * as d3 from 'd3'
 class App extends Component {
 
 	componentDidMount() {
-		var svg = d3.select("svg"),
-		margin = {
-			top: 20,
-			right: 20,
-			bottom: 30,
-			left: 40
-		},
-		width = +svg.attr("width") - margin.left - margin.right,
-		height = +svg.attr("height") - margin.top - margin.bottom,
-		g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-		var x = d3.scaleBand()
-			.rangeRound([0, width])
-			.paddingInner(0.05)
-			.align(0.1);
-
-		var y = d3.scaleLinear()
-			.rangeRound([height, 0]);
-
 		var z = d3.scaleOrdinal()
 			.range(["#98abc5", "#8a89a6", "#98abc5", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
@@ -44,21 +25,46 @@ class App extends Component {
 					d.total += d[k];
 				})
 			});
-
 			data.sort(function(x, y){
 				return d3.ascending(x.index, y.index);
 			})
 
-			x.domain(data.map(function(d) {
-				return d.name;
-			}));
-			y.domain([0, d3.max(data, function(d) {
-				return d.total;
-			})]).nice();
-			z.domain(keys);
-		
+
+
+			
+			var svg = d3.select("svg"),
+			margin = {
+				top: 20,
+				right: 20,
+				bottom: 30,
+				left: 40
+			},
+			width = +svg.attr("width") - margin.left - margin.right,
+			height = +svg.attr("height") - margin.top - margin.bottom,
+			g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+
+			// Add X axis
+			var x = d3.scaleLinear()
+				.range([ 0, width])
+
+			// Y axis
+			var y = d3.scaleBand()
+				.range([ 0, height ])
+				.domain(data.map(function(d) { return d.name; }))
+				.padding(.1)
+			svg.append("g")
+				.call(d3.axisLeft(y))
+
+			x.domain([0, d3.max(data, function(d) {
+				return d.total
+			})]).nice()
+			z.domain(keys)
+
+
 			g.append("g")
-				.selectAll("g")
+			.selectAll("g")
 				.data(d3.stack().keys(keys)(data))
 				.enter().append("g")
 				.attr("fill", function(d) {
@@ -69,30 +75,76 @@ class App extends Component {
 					return d;
 				})
 				.enter().append("rect")
-				.attr("x", function(d) {
-					return x(d.data.name);
-				})
 				.attr("y", function(d) {
+					return y(d.data.name);
+				})
+				.attr("x", function(d) {
 					console.log("d: ", d)
-					return y(d[1]);
+					return x(d[0]);
 				})
-				.attr("height", function(d) {
-					console.log("height: ", y(d[0]) - y(d[1]))
-					return y(d[0]) - y(d[1]);
+				.attr("width", function(d) {
+					// console.log("width d: ", d)
+					// console.log("width: ", x(d[0]) - x(d[1]))
+					return -(x(d[0]) - x(d[1]));
 				})
-				.attr("width", x.bandwidth());
+				.attr("height", y.bandwidth());
+
 		
+			// g.append("g")
+			// 	.selectAll("g")
+			// 	.data(d3.stack().keys(keys)(data))
+			// 	.enter().append("g")
+			// 	.attr("fill", function(d) {
+			// 		return z(d.key);
+			// 	})
+			// 	.selectAll("rect")
+			// 	.data(function(d) {
+			// 		return d;
+			// 	})
+			// 	.enter().append("rect")
+			// 	.attr("y", function(d) {
+			// 		return y(d.data.name);
+			// 	})
+			// 	.attr("x", function(d) {
+			// 		console.log("d: ", d)
+			// 		return x(d[1]);
+			// 	})
+			// 	.attr("width", function(d) {
+			// 		console.log("width d: ", d)
+			// 		return x(d[0]) - x(d[1]);
+			// 	})
+			// 	// .attr("width", x.bandwidth());
+		
+				
+
+
+			//Bars
+			// svg.selectAll("myRect")
+			// .data(data)
+			// .enter()
+			// .append("rect")
+			// .attr("x", x(0) )
+			// .attr("y", function(d) { return y(d.name); })
+			// .attr("width", function(d) { return x(d.total); })
+			// .attr("height", y.bandwidth() )
+			// .attr("fill", "#69b3a2")
+
+
+
 			g.append("g")
 				.attr("class", "axis")
 				.attr("transform", "translate(0," + height + ")")
-				.call(d3.axisBottom(x));
+				.call(d3.axisBottom(x))
+				.selectAll("text")
+				// .attr("transform", "translate(-10,0)rotate(-45)")
+				.style("text-anchor", "end")
 		
 			g.append("g")
 				.attr("class", "axis")
 				.call(d3.axisLeft(y).ticks(null, "s"))
 				.append("text")
-				.attr("x", 2)
-				.attr("y", y(y.ticks().pop()) + 0.5)
+				.attr("x", x(x.ticks().pop()) + 0.5)
+				.attr("y", 2)
 				.attr("dy", "0.32em")
 				.attr("fill", "#000")
 				.attr("font-weight", "bold")
