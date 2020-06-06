@@ -1,0 +1,443 @@
+[
+  {
+    "index": "54",
+    "name": "Constantine the Great",
+    "before_reign": 34,
+    "during_reign": 30,
+    "after_reign": 0
+  },
+  {
+    "index": "38",
+    "name": "Valerian",
+    "before_reign": 58,
+    "during_reign": 6,
+    "after_reign": 4
+  },
+  {
+    "index": "40",
+    "name": "Claudius Gothicus",
+    "before_reign": 55,
+    "during_reign": 1,
+    "after_reign": 0
+  },
+  {
+    "index": "41",
+    "name": "Quintillus",
+    "before_reign": 58,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "62",
+    "name": "Julian",
+    "before_reign": 28,
+    "during_reign": 3,
+    "after_reign": 0
+  },
+  {
+    "index": "68",
+    "name": "Theodosius I",
+    "before_reign": 31,
+    "during_reign": 16,
+    "after_reign": 0
+  },
+  {
+    "index": "18",
+    "name": "Commodus",
+    "before_reign": 15,
+    "during_reign": 15,
+    "after_reign": 0
+  },
+  {
+    "index": "28",
+    "name": "Gordian I",
+    "before_reign": 79,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "29",
+    "name": "Gordian II",
+    "before_reign": 46,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "2",
+    "name": "Tiberius",
+    "before_reign": 27,
+    "during_reign": 22,
+    "after_reign": 0
+  },
+  {
+    "index": "37",
+    "name": "Aemilian",
+    "before_reign": 46,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "42",
+    "name": "Aurelian",
+    "before_reign": 56,
+    "during_reign": 5,
+    "after_reign": 0
+  },
+  {
+    "index": "11",
+    "name": "Domitian",
+    "before_reign": 29,
+    "during_reign": 15,
+    "after_reign": 0
+  },
+  {
+    "index": "12",
+    "name": "Nerva",
+    "before_reign": 65,
+    "during_reign": 1,
+    "after_reign": 0
+  },
+  {
+    "index": "32",
+    "name": "Gordian III",
+    "before_reign": 13,
+    "during_reign": 5,
+    "after_reign": 0
+  },
+  {
+    "index": "46",
+    "name": "Carus",
+    "before_reign": 52,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "59",
+    "name": "Consantius II",
+    "before_reign": 19,
+    "during_reign": 24,
+    "after_reign": 0
+  },
+  {
+    "index": "3",
+    "name": "Caligula",
+    "before_reign": 24,
+    "during_reign": 3,
+    "after_reign": 0
+  },
+  {
+    "index": "4",
+    "name": "Claudius",
+    "before_reign": 31,
+    "during_reign": 13,
+    "after_reign": 0
+  },
+  {
+    "index": "16",
+    "name": "Marcus Aurelius",
+    "before_reign": 39,
+    "during_reign": 19,
+    "after_reign": 0
+  },
+  {
+    "index": "49",
+    "name": "Diocletian",
+    "before_reign": 39,
+    "during_reign": 20,
+    "after_reign": 6
+  },
+  {
+    "index": "21",
+    "name": "Septimus Severus",
+    "before_reign": 47,
+    "during_reign": 17,
+    "after_reign": 0
+  },
+  {
+    "index": "31",
+    "name": "Balbinus",
+    "before_reign": 60,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "55",
+    "name": "Maxentius",
+    "before_reign": 28,
+    "during_reign": 6,
+    "after_reign": 0
+  },
+  {
+    "index": "17",
+    "name": "Lucius Verus",
+    "before_reign": 30,
+    "during_reign": 8,
+    "after_reign": 0
+  },
+  {
+    "index": "64",
+    "name": "Valentinian I",
+    "before_reign": 42,
+    "during_reign": 11,
+    "after_reign": 0
+  },
+  {
+    "index": "8",
+    "name": "Vitellius",
+    "before_reign": 53,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "19",
+    "name": "Pertinax",
+    "before_reign": 66,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "23",
+    "name": "Geta",
+    "before_reign": 19,
+    "during_reign": 2,
+    "after_reign": 0
+  },
+  {
+    "index": "51",
+    "name": "Constantius I",
+    "before_reign": 55,
+    "during_reign": 1,
+    "after_reign": 0
+  },
+  {
+    "index": "56",
+    "name": "Maximinus II",
+    "before_reign": 40,
+    "during_reign": 2,
+    "after_reign": 0
+  },
+  {
+    "index": "67",
+    "name": "Valentinian II",
+    "before_reign": 4,
+    "during_reign": 16,
+    "after_reign": 0
+  },
+  {
+    "index": "9",
+    "name": "Vespasian",
+    "before_reign": 60,
+    "during_reign": 9,
+    "after_reign": 0
+  },
+  {
+    "index": "52",
+    "name": "Galerius",
+    "before_reign": 45,
+    "during_reign": 6,
+    "after_reign": 0
+  },
+  {
+    "index": "6",
+    "name": "Galba",
+    "before_reign": 65,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "25",
+    "name": "Elagabalus",
+    "before_reign": 15,
+    "during_reign": 3,
+    "after_reign": 0
+  },
+  {
+    "index": "33",
+    "name": "Philip I",
+    "before_reign": 40,
+    "during_reign": 5,
+    "after_reign": 0
+  },
+  {
+    "index": "10",
+    "name": "Titus",
+    "before_reign": 39,
+    "during_reign": 2,
+    "after_reign": 0
+  },
+  {
+    "index": "50",
+    "name": "Maximian",
+    "before_reign": 36,
+    "during_reign": 19,
+    "after_reign": 5
+  },
+  {
+    "index": "58",
+    "name": "Constantine II",
+    "before_reign": 21,
+    "during_reign": 2,
+    "after_reign": 0
+  },
+  {
+    "index": "63",
+    "name": "Jovian",
+    "before_reign": 32,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "65",
+    "name": "Valens",
+    "before_reign": 36,
+    "during_reign": 14,
+    "after_reign": 0
+  },
+  {
+    "index": "22",
+    "name": "Caracalla",
+    "before_reign": 9,
+    "during_reign": 19,
+    "after_reign": 0
+  },
+  {
+    "index": "34",
+    "name": "Trajan Decius",
+    "before_reign": 48,
+    "during_reign": 1,
+    "after_reign": 0
+  },
+  {
+    "index": "45",
+    "name": "Probus",
+    "before_reign": 44,
+    "during_reign": 6,
+    "after_reign": 0
+  },
+  {
+    "index": "66",
+    "name": "Gratian",
+    "before_reign": 8,
+    "during_reign": 16,
+    "after_reign": 0
+  },
+  {
+    "index": "27",
+    "name": "Maximinus I",
+    "before_reign": 62,
+    "during_reign": 3,
+    "after_reign": 0
+  },
+  {
+    "index": "14",
+    "name": "Hadrian",
+    "before_reign": 41,
+    "during_reign": 20,
+    "after_reign": 0
+  },
+  {
+    "index": "26",
+    "name": "Severus Alexander",
+    "before_reign": 13,
+    "during_reign": 13,
+    "after_reign": 0
+  },
+  {
+    "index": "36",
+    "name": "Trebonianus Gallus",
+    "before_reign": 45,
+    "during_reign": 2,
+    "after_reign": 0
+  },
+  {
+    "index": "7",
+    "name": "Otho",
+    "before_reign": 36,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "24",
+    "name": "Macrinus",
+    "before_reign": 52,
+    "during_reign": 1,
+    "after_reign": 0
+  },
+  {
+    "index": "13",
+    "name": "Trajan",
+    "before_reign": 44,
+    "during_reign": 19,
+    "after_reign": 0
+  },
+  {
+    "index": "15",
+    "name": "Antonius Pius",
+    "before_reign": 51,
+    "during_reign": 22,
+    "after_reign": 0
+  },
+  {
+    "index": "20",
+    "name": "Didius Julianus",
+    "before_reign": 60,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "35",
+    "name": "Hostilian",
+    "before_reign": 21,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "1",
+    "name": "Augustus",
+    "before_reign": 36,
+    "during_reign": 11,
+    "after_reign": 0
+  },
+  {
+    "index": "30",
+    "name": "Pupienus",
+    "before_reign": 60,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "39",
+    "name": "Gallienus",
+    "before_reign": 35,
+    "during_reign": 14,
+    "after_reign": 0
+  },
+  {
+    "index": "43",
+    "name": "Tacitus",
+    "before_reign": 75,
+    "during_reign": 0,
+    "after_reign": 0
+  },
+  {
+    "index": "57",
+    "name": "Lucinius I",
+    "before_reign": 58,
+    "during_reign": 15,
+    "after_reign": 0
+  },
+  {
+    "index": "5",
+    "name": "Nero",
+    "before_reign": 16,
+    "during_reign": 13,
+    "after_reign": 0
+  },
+  {
+    "index": "60",
+    "name": "Constans",
+    "before_reign": 17,
+    "during_reign": 12,
+    "after_reign": 0
+  }
+]
