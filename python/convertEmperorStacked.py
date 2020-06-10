@@ -18,7 +18,7 @@ def main():
         if ('birth' not in obj['fields'] or 'death' not in  obj['fields']):
             print("no birth or death. name: ", obj['fields']['name'])
             continue
-
+        
 
         birth = parser.parse(obj['fields']['birth'])
         death = parser.parse(obj['fields']['death'])
@@ -44,6 +44,8 @@ def main():
         # print("difference_in_years: ", difference_in_years)
 
         new_obj['before_reign'] = abs(age_at_reign)
+        if reign_length == 0:
+            reign_length = 1
         new_obj['during_reign'] = abs(reign_length)
         new_obj['after_reign'] = abs(end_reign_to_death)
 
