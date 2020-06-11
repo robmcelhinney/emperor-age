@@ -1,3 +1,3 @@
-export const CAUSE_COLOUR = {"Assassination": "red", "Natural Causes": "grey", 
+export const CAUSE_COLOUR = {"Assassination": "red", "Natural Causes": "purple", 
 "Execution": "black", "Suicide": "orange", "Died in Battle": "blue",
-"Unknown": "yellow", "Captivity": "pink"}
+"Unknown": "grey", "Captivity": "pink"}

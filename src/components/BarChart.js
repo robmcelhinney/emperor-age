@@ -26,12 +26,12 @@ const BarChart = () => {
 			// fix pre-processing
 			let keys = [];
 			for (let key in data[0]){
+				// if (key !== "name" && key !== "index" && key !== "cause" && key !== "Pre Emperor" && key !== "Post Emperor")
 				if (key !== "name" && key !== "index" && key !== "cause")
 					keys.push(key);
 			}
 			data.forEach(function(d){
 				d.total = 0;
-				// console.log("keys: ", keys)
 				keys.forEach(function(k){
 					d.total += d[k];
 				})
@@ -40,27 +40,26 @@ const BarChart = () => {
 				return x["index"] - y["index"];
 			})
 
-			// 
-			// console.log("data.length * 20: ", data.length * 20)
-
 			let margin = {
 				top: 20, 
 				right: 20, 
 				bottom: 40, 
 				left: 30
 			},
-			width =  400,
-            height = 900;
+			height = 900,
+			width =  window.innerWidth - margin.left - margin.right;
+			if (width > 900) {
+				width = width - (width - 700)
+			}
 		
 			// append the svg object to the body of the page
 			let svg = d3.select("div#chart")
 				.append("svg")
-				.attr("viewBox", "0 0 700 1000")
+				.attr("viewBox", "0 0 1000 1200")
 				.attr("preserveAspectRatio", "xMinYMin meet"),
 			g = svg
 				.append("g")
 				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
 
 
 			// Add X axis
@@ -165,7 +164,7 @@ const BarChart = () => {
 				.attr("font-size", "0.5em")
 				.attr("text-anchor", "end")
 				.selectAll("g")
-				.data(keys.slice().reverse())
+				.data(keys.slice())
 				.enter().append("g")
 				.attr("transform", function(d, i) {
 					return "translate(0," + i * 12 + ")";
@@ -183,7 +182,6 @@ const BarChart = () => {
 				.text(function(d) {
 					return d;
 				});
-
 
 			
 			// LEGEND: Death Circle 
@@ -226,7 +224,6 @@ const BarChart = () => {
 				.text(function(d) {
 					return d;
 				});
-
 		})
     }
 

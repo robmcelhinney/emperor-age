@@ -41,12 +41,14 @@ def main():
         age_at_reign = relativedelta(reign_start, birth).years
         reign_length = relativedelta(reign_end, reign_start).years
         end_reign_to_death = relativedelta(death, reign_end).years
-        # print("difference_in_years: ", difference_in_years)
+        end_reign_to_death_months = relativedelta(death, reign_end).months
 
         new_obj['Pre Emperor'] = abs(age_at_reign)
         if reign_length == 0:
             reign_length = 1
         new_obj['Emperor'] = abs(reign_length)
+        if end_reign_to_death == 0 and end_reign_to_death_months != 0:
+            end_reign_to_death = 1
         new_obj['Post Emperor'] = abs(end_reign_to_death)
 
         new_json.append(new_obj)
