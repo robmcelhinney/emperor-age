@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
-import * as d3 from 'd3'
+import React, { useEffect } from "react"
+import * as d3 from "d3"
+import * as constClass from "../constants/constants.js"
 
 const BarChart = () => {
 
@@ -8,19 +9,24 @@ const BarChart = () => {
       }, [])
 
     function createBarChart() {
-        console.log("createBarChart")
 
+		let cause_keys = Object.keys(constClass.CAUSE_COLOUR).map(function(key){
+			return key;
+		});
+		let cause_values = Object.keys(constClass.CAUSE_COLOUR).map(function(key){
+			return constClass.CAUSE_COLOUR[key];
+		});
         
-        var z = d3.scaleOrdinal()
-			.range(["#98abc5", "#800080", "#748091", "#6b486b"]);
+        let z = d3.scaleOrdinal()
+			.range(["#38b3fa", "#800080", "#748091", "#6b486b"]);
 
 		  
 		d3.json(process.env.PUBLIC_URL + "/data/emperors.json").then((data) => {
 
 			// fix pre-processing
-			var keys = [];
+			let keys = [];
 			for (let key in data[0]){
-				if (key !== "name" && key !== "index")
+				if (key !== "name" && key !== "index" && key !== "cause")
 					keys.push(key);
 			}
 			data.forEach(function(d){
@@ -39,17 +45,17 @@ const BarChart = () => {
 
 			let margin = {
 				top: 20, 
-				right: 120, 
+				right: 20, 
 				bottom: 40, 
-				left: 150
+				left: 30
 			},
 			width =  400,
-            height = 700;
+            height = 900;
 		
 			// append the svg object to the body of the page
 			let svg = d3.select("div#chart")
 				.append("svg")
-				.attr("viewBox", "0 0 700 800")
+				.attr("viewBox", "0 0 700 1000")
 				.attr("preserveAspectRatio", "xMinYMin meet"),
 			g = svg
 				.append("g")
@@ -58,14 +64,14 @@ const BarChart = () => {
 
 
 			// Add X axis
-			var x = d3.scaleLinear()
+			let x = d3.scaleLinear()
 				.range([ 0, width ])
 
 			// Y axis
-			var y = d3.scaleBand()
+			let y = d3.scaleBand()
 				.range([ 0, height ])
 				.domain(data.map(function(d) { return d.name }))
-				.padding(.3)
+				.padding(.1)
 
 
 			x.domain([0, d3.max(data, function(d) {
@@ -75,7 +81,7 @@ const BarChart = () => {
 
 
 			g.append("g")
-			.selectAll("g")
+				.selectAll("g")
 				.data(d3.stack().keys(keys)(data))
 				.enter().append("g")
 				.attr("fill", function(d) {
@@ -99,20 +105,54 @@ const BarChart = () => {
 				.attr("height", y.bandwidth());
 
 
-			
+			// Bottom Axis (Years)
 			g.append("g")
 				.attr("class", "axis")
 				.attr("transform", "translate(0," + height + ")")
-				.call(d3.axisBottom(x))
+				.call(
+					d3.axisBottom(x)
+					.tickFormat(function(d){
+						return d + " yrs"
+					})
+					.tickSize(-height)
+				)
+
+			// Name
+			g.append("g")
+				.attr('class', 'bar-label')
+				.selectAll("text")
+				.data(data)
+				.enter()
+				.append("text")
+				.text(d => d.name)
+				.attr("text-anchor", "start")
+				.attr("y", function(d) { return y(d.name) - 3 })
+				.attr('x', "2")
+				.attr("dy", "0.9em")
+				.style('fill', 'black')
+
+				
+			// Death Circles
+			g.append("g")
+				.attr('class', 'bar-label')
+				.selectAll("circle")
+				.append("svg")
+				.data(data)
+				.enter()
+				.append("circle")
+				.attr("cx", function() {
+					return -10;
+				})
+				.attr("cy", function(d) { return y(d.name) + 6 })
+				.attr("r", 4)
+				.style("fill", function(d) { return constClass.CAUSE_COLOUR[d.cause] })
+				.attr("dy", "1em")
 		
+			// LEGEND: REIGN 
 			g.append("g")
 				.attr("class", "axis")
-				.call(d3.axisLeft(y).ticks(null, "s"))
-				.style("font-size", "0.8em")
-
-				// LEGEND: REIGN 
 				.append("text")
-				.attr("x", x(x.ticks().pop()) + 0.5)
+				.attr("x", x(x.ticks().pop()) + 10)
 				.attr("y", 2)
 				.attr("dy", "0.32em")
 				.attr("fill", "#000")
@@ -120,25 +160,68 @@ const BarChart = () => {
 				.attr("text-anchor", "start")
 				.text("Reign");
 				
-			var legend = g.append("g")
+			let legend = g.append("g")
 				.attr("font-family", "sans-serif")
-				.attr("font-size", "0.35em")
+				.attr("font-size", "0.5em")
 				.attr("text-anchor", "end")
 				.selectAll("g")
 				.data(keys.slice().reverse())
 				.enter().append("g")
 				.attr("transform", function(d, i) {
-					return "translate(0," + i * 20 + ")";
+					return "translate(0," + i * 12 + ")";
 				})
 			legend.append("rect")
-				.attr("x", width + 20)
+				.attr("x", width + 60)
 				.attr("y", 15)
 				.attr("width", 9)
 				.attr("height", 9)
 				.attr("fill", z);
 			legend.append("text")
-				.attr("x", width + 18)
+				.attr("x", width + 58)
 				.attr("y", 19.5)
+				.attr("dy", "0.4em")
+				.text(function(d) {
+					return d;
+				});
+
+
+			
+			// LEGEND: Death Circle 
+			let cause_death = d3.scaleOrdinal()
+				.range(cause_values);
+
+			g.append("g")
+				.attr("class", "axis")
+				.append("text")
+				.attr("x", x(x.ticks().pop()) + 10)
+				.attr("y", 100)
+				.attr("dy", "0.32em")
+				.attr("fill", "#000")
+				.attr("font-weight", "bold")
+				.attr("text-anchor", "start")
+				.text("Cause of Death");
+				
+			let legend_death = g.append("g")
+				.attr("font-family", "sans-serif")
+				.attr("font-size", "0.5em")
+				.attr("text-anchor", "end")
+				.selectAll("g")
+				.data(cause_keys.slice())
+				.enter().append("g")
+				.attr("transform", function(d, i) {
+					return "translate(0," + i * 12 + ")";
+				})
+			legend_death
+				.append("circle")
+				.attr("cx", function() {
+					return width + 65;
+				})
+				.attr("cy", 120)
+				.attr("r", 4)
+				.attr("fill", cause_death);
+			legend_death.append("text")
+				.attr("x", width + 60)
+				.attr("y", 120)
 				.attr("dy", "0.4em")
 				.text(function(d) {
 					return d;

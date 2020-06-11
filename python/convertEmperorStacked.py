@@ -28,7 +28,7 @@ def main():
 
         new_obj['index'] = obj['fields']['index']
         new_obj['name'] = obj['fields']['name']
-
+        new_obj['cause'] = obj['fields']['cause']
 
         if ('reign_start' not in obj['fields'] or 'reign_end' not in obj['fields']):
             print("no reign_start or end. name: ", obj['fields']['name'])
@@ -43,11 +43,11 @@ def main():
         end_reign_to_death = relativedelta(death, reign_end).years
         # print("difference_in_years: ", difference_in_years)
 
-        new_obj['before_reign'] = abs(age_at_reign)
+        new_obj['Pre Emperor'] = abs(age_at_reign)
         if reign_length == 0:
             reign_length = 1
-        new_obj['during_reign'] = abs(reign_length)
-        new_obj['after_reign'] = abs(end_reign_to_death)
+        new_obj['Emperor'] = abs(reign_length)
+        new_obj['Post Emperor'] = abs(end_reign_to_death)
 
         new_json.append(new_obj)
 

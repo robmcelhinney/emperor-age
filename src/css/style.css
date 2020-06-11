@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "Constantine";
+    src: url("../fonts/Constantine.ttf");
+}
+
+#Header {
+    font-size: 1.6em;
+    text-align: center;
+}
+#Heading {
+    font-family: 'Constantine';
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
 .svg-container {
     position: relative;
     width: 90%;
@@ -17,4 +32,16 @@ svg .rect {
     fill: gold;
     stroke: steelblue;
     stroke-width: 5px;
+}
+
+.tick > line{
+    opacity: 0.3;
+    stroke-dasharray: 5, 5; 
+}
+
+svg text.label {
+    fill:white;
+    font: 15px;  
+    font-weight: 400;
+    text-anchor: middle;
 }
