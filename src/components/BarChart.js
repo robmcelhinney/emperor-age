@@ -47,8 +47,11 @@ const BarChart = () => {
 				bottom: 40, 
 				left: 30
 			},
-			height = 900,
-			width =  window.innerWidth - margin.left - margin.right;
+			height = 900
+			let width = 0;
+			if (typeof window !== `undefined`) {
+				width =  window.innerWidth - margin.left - margin.right
+			}
 			if (width > 1440) {
 				width = width - (width - 1000)
 			}

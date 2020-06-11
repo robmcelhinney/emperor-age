@@ -27,8 +27,10 @@ const MedianReignLength = () => {
                     median_age.push(pre_reign + reign + post_reign)
                     count++
                 }
-                median_value.sort()
-                median_age.sort()
+                median_value.sort((a, b) => a - b)
+                median_age.sort((a, b) => a - b)
+                console.log("count: ", count)
+                console.log("median_value: ", median_value)
                 if (count % 2 === 0) {  // is even
                     setMedianReign((median_value[count / 2 - 1] + median_value[count / 2]) / 2)
                     setMedianAge((median_age[count / 2 - 1] + median_age[count / 2]) / 2)
@@ -41,8 +43,8 @@ const MedianReignLength = () => {
     }
 
     return (
-        <div class={"Header"}>
-            <div class={"Heading"}>Extra Info</div>
+        <div className={"Header"}>
+            <div className={"Heading"}>Extra Info</div>
             <div id={"median"}>Median Reign: {medianReign} years</div>
             <div id={"median"}>Median Age at death: {medianAge} years</div>
             <br/>

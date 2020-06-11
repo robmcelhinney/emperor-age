@@ -6,8 +6,8 @@ class ReignHeader extends Component {
 	render() {
   
 		return (
-			<div class={"Header"}>
-                <div class={"Heading"}>Roman Emperors' Reign Lengths</div>
+			<div className={"Header"}>
+                <div className={"Heading"}>Roman Emperors' Reign Lengths</div>
 			</div>
 		);
 	}
