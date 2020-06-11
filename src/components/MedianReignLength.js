@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 
-const MedianReignLength = () => {
+const MedianReignLength = (props) => {
 	const [medianReign, setMedianReign] = useState(
 		0
     );
@@ -13,33 +13,29 @@ const MedianReignLength = () => {
       }, [medianReign, medianAge])
 
     const getMedianReignLength = () => {
-        fetch(process.env.PUBLIC_URL + "/data/emperors.json")
-            .then((r) => r.json())
-            .then((data) =>{
-                let median_value = []
-                let median_age = []
-                let count = 0
-                for (let row in data) {
-                    const pre_reign = Number(data[row]["Pre Emperor"])
-                    const reign = Number(data[row]["Emperor"])
-                    const post_reign = Number(data[row]["Post Emperor"])
-                    median_value.push(reign)
-                    median_age.push(pre_reign + reign + post_reign)
-                    count++
-                }
-                median_value.sort((a, b) => a - b)
-                median_age.sort((a, b) => a - b)
-                console.log("count: ", count)
-                console.log("median_value: ", median_value)
-                if (count % 2 === 0) {  // is even
-                    setMedianReign((median_value[count / 2 - 1] + median_value[count / 2]) / 2)
-                    setMedianAge((median_age[count / 2 - 1] + median_age[count / 2]) / 2)
-                } else { // is odd
-                    setMedianReign(median_value[(count - 1) / 2])
-                    setMedianAge(median_age[(count - 1) / 2])
-                }
-            })
-        
+        let data = props.data
+        let median_value = []
+        let median_age = []
+        let count = 0
+        for (let row in data) {
+            const pre_reign = Number(data[row]["Pre Emperor"])
+            const reign = Number(data[row]["Emperor"])
+            const post_reign = Number(data[row]["Post Emperor"])
+            median_value.push(reign)
+            median_age.push(pre_reign + reign + post_reign)
+            count++
+        }
+        median_value.sort((a, b) => a - b)
+        median_age.sort((a, b) => a - b)
+        console.log("count: ", count)
+        console.log("median_value: ", median_value)
+        if (count % 2 === 0) {  // is even
+            setMedianReign((median_value[count / 2 - 1] + median_value[count / 2]) / 2)
+            setMedianAge((median_age[count / 2 - 1] + median_age[count / 2]) / 2)
+        } else { // is odd
+            setMedianReign(median_value[(count - 1) / 2])
+            setMedianAge(median_age[(count - 1) / 2])
+        }
     }
 
     return (

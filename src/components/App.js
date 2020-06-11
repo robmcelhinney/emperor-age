@@ -5,20 +5,26 @@ import Header from './Header.js'
 import ReignHeader from './ReignHeader.js'
 import MedianReignLength from './MedianReignLength.js'
 import Footer from './Footer.js'
-import "../css/style.css"
+import emperor from "../data/emperors.json"
 
 
 class App extends Component {
 
 	render() {
-  
+		let barChartData = JSON.parse(JSON.stringify(emperor))
+		let reignChartData = JSON.parse(JSON.stringify(emperor))
+		let medianData = JSON.parse(JSON.stringify(emperor))
+
+		console.log("barChartData: ", barChartData)
+		console.log("reignChartData: ", reignChartData)
+
 		return (
 			<div id={"content"}>
 				<Header />
-				<BarChart />
-				<ReignHeader />
-				<ReignLengthChart />
-				<MedianReignLength />
+				<BarChart data={barChartData} />
+				<ReignHeader/>
+				<ReignLengthChart data={reignChartData} />
+				<MedianReignLength data={medianData} />
 				<Footer />
 			</div>
 		);
