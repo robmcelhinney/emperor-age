@@ -2,7 +2,13 @@
     {
         "datasetid": "roman-emperors", 
         "recordid": "956a5810c58f0d2599fe7defe1cfbcac827955ca", 
-            "fields": {"reign_start": "0306-07-25T00:00:00Z", "index": "54", "killer": "Disease", "birth_cty": "Naissus", "name_full": "CAESAR FLAVIVS VALERIVS AVRELIVS CONSTANTINVS AVGVSTVS", "rise": "Birthright", "dynasty": "Constantinian", "death": "0337-05-22T00:00:00Z", "birth_prv": "Moesia Superior", "reign_end": "0337-05-22T00:00:00Z", "era": "Dominate", "birth": "0272-02-27T00:00:00Z", "cause": "Natural Causes", "image": {"mimetype": "image/jpeg", "format": "JPEG", "color_summary": ["rgba(196, 185, 175, 1.00)", "rgba(182, 166, 152, 1.00)", "rgba(179, 158, 144, 1.00)"], "filename": "Rome-Capitole-StatueConstantin.jpg", "width": 2448, "id": "c113229a8aa1eac5595cde77109f35b0", "height": 3264, "thumbnail": true}, "name": "Constantine the Great"}, 
+            "fields": {"reign_start": "0306-07-25T00:00:00Z", "index": "54", "killer": "Disease", "birth_cty": "Naissus", 
+                "name_full": "CAESAR FLAVIVS VALERIVS AVRELIVS CONSTANTINVS AVGVSTVS", "rise": "Birthright", "dynasty": "Constantinian", 
+                "death": "0337-05-22T00:00:00Z", "birth_prv": "Moesia Superior", "reign_end": "0337-05-22T00:00:00Z", "era": "Dominate", 
+                "birth": "0272-02-27T00:00:00Z", "cause": "Natural Causes", "image": {"mimetype": "image/jpeg", "format": "JPEG", 
+                    "color_summary": ["rgba(196, 185, 175, 1.00)", "rgba(182, 166, 152, 1.00)", "rgba(179, 158, 144, 1.00)"], 
+                    "filename": "Rome-Capitole-StatueConstantin.jpg", "width": 2448, "id": "c113229a8aa1eac5595cde77109f35b0", 
+                    "height": 3264, "thumbnail": true}, "name": "Constantine the Great"}, 
         "record_timestamp": "2019-12-31T23:01:44.315Z"},
     {
         "datasetid": "roman-emperors", "recordid": "b32b615d2965c4fc76bb19612fd48c780baf7efb", 
@@ -111,11 +117,19 @@
                 
             {"datasetid": "roman-emperors", "recordid": "334db9d795d07e788f260098d7f43acfbd98b1db", "fields": {"reign_start": "0251-06-15T00:00:00Z", "index": "35", "killer": "Disease", "birth_cty": "Sirmium", "notes": "birth is only estimate. Reign.end is only estimate. Regin.start is only estimate. Death is only estimate", "rise": "Birthright", "birth": "0230-01-01T00:00:00Z", "dynasty": "Gordian", "death": "0251-10-01T00:00:00Z", "birth_prv": "Pannonia", "reign_end": "0251-10-01T00:00:00Z", "era": "Principate", "image": {"mimetype": "image/jpeg", "format": "JPEG", "color_summary": ["rgba(208, 194, 136, 1.00)", "rgba(175, 151, 68, 1.00)", "rgba(176, 158, 106, 1.00)"], "filename": "Aureus_Hostilian_RIC_0183a.JPG", "width": 236, "id": "c4716031522682f637cb801ecd5a0018", "height": 236, "thumbnail": true}, "cause": "Natural Causes", "name_full": "CAESAR CAIVS VALENS HOSTILIANVS MESSIVS QVINTVS AVGVSTVS", "name": "Hostilian"}, "record_timestamp": "2019-12-31T23:01:44.315Z"},
             
+
+
             {"datasetid": "roman-emperors", "recordid": "69eb51535f1919a4ae32ac2cc7aed59898a289f5", 
-            
             "fields": 
-                {"reign_start": "0027-01-16T00:00:00Z", "index": "1", "verif_who": "Reddit user zonination", "killer": "Wife", "birth_cty": "Rome", "rise": "Birthright", "birth": "0001-09-23T00:00:00Z", "dynasty": "Julio-Claudian", "death": "0077-08-19T00:00:00Z", "birth_prv": "Italia", "reign_end": "0077-08-19T00:00:00Z", "era": "Principate", "image": {"mimetype": "image/jpeg", "format": "JPEG", "color_summary": ["rgba(133, 120, 113, 1.00)", "rgba(152, 140, 132, 1.00)", "rgba(162, 156, 150, 1.00)"], "filename": "Augustus_Prima_Porta_Louvre_Ma1247.jpg", "width": 2592, "id": "cdcec2faad7fd5d8702d25c1f398050e", "height": 3872, "thumbnail": true}, "cause": "Natural Causes", "name_full": "IMPERATOR CAESAR DIVI FILIVS AVGVSTVS", "name": "Augustus"}, 
+                {"reign_start": "0037-01-16T00:00:00Z", "index": "1", "verif_who": "Reddit user zonination", "killer": "Wife", "birth_cty": "Rome", "rise": "Birthright", 
+                    "birth": "0001-09-23T00:00:00Z", "dynasty": "Julio-Claudian", "death": "0077-08-19T00:00:00Z", "birth_prv": "Italia", "reign_end": "0077-08-19T00:00:00Z", 
+                    "era": "Principate", 
+                    "image": {"mimetype": "image/jpeg", "format": "JPEG", "color_summary": ["rgba(133, 120, 113, 1.00)", "rgba(152, 140, 132, 1.00)", 
+                        "rgba(162, 156, 150, 1.00)"], "filename": "Augustus_Prima_Porta_Louvre_Ma1247.jpg", "width": 2592, "id": "cdcec2faad7fd5d8702d25c1f398050e", 
+                        "height": 3872, "thumbnail": true}, "cause": "Natural Causes", "name_full": "IMPERATOR CAESAR DIVI FILIVS AVGVSTVS", "name": "Augustus"}, 
             "record_timestamp": "2019-12-31T23:01:44.315Z"},
+
+
                 
             {"datasetid": "roman-emperors", "recordid": "322e9b5594b10ba689e286cc4bd1d80319677e7b", 
                 "fields": {"reign_start": "0238-04-22T00:00:00Z", "index": "30", "killer": "Praetorian Guard", "name": "Pupienus", "notes": "birth is only estimate.", 

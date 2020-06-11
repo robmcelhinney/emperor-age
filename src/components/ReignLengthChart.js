@@ -3,7 +3,7 @@ import * as d3 from "d3"
 import * as constClass from "../constants/constants.js"
 import * as Legends from "../functions/Legends.js"
 
-const BarChart = () => {
+const ReignLengthChart = () => {
 
     useEffect(() => {
         createBarChart()
@@ -19,7 +19,7 @@ const BarChart = () => {
 		});
         
         let z = d3.scaleOrdinal()
-			.range(["#38b3fa", "#800080", "#748091"]);
+			.range(["#a8a8a8"]);
 
 		  
 		d3.json(process.env.PUBLIC_URL + "/data/emperors.json").then((data) => {
@@ -27,8 +27,7 @@ const BarChart = () => {
 			// fix pre-processing
 			let keys = [];
 			for (let key in data[0]){
-				// if (key !== "name" && key !== "index" && key !== "cause" && key !== "Pre Emperor" && key !== "Post Emperor")
-				if (key !== "name" && key !== "index" && key !== "cause")
+				if (key !== "name" && key !== "index" && key !== "cause" && key !== "Pre Emperor" && key !== "Post Emperor")
 					keys.push(key);
 			}
 			data.forEach(function(d){
@@ -61,7 +60,7 @@ const BarChart = () => {
 			}
 		
 			// append the svg object to the body of the page
-			let svg = d3.select("div#chart")
+			let svg = d3.select("div#reign_chart")
 				.append("svg")
 				.attr("viewBox", "0 0 " + viewbox_width + " 1000")
 				.attr("preserveAspectRatio", "xMinYMin meet"),
@@ -138,7 +137,6 @@ const BarChart = () => {
 				.attr("dy", "1em")
 				.attr("font-size", "0.9em")
 				.style('fill', 'black')
-
 				
 			// Death Circles
 			g.append("g")
@@ -159,18 +157,19 @@ const BarChart = () => {
 			// LEGEND: REIGN 
 			Legends.createRectLegend(z, g, width, keys, x)
 			
-			
+			// LEGEND: Death Circle 
 			let cause_death = d3.scaleOrdinal()
 				.range(cause_values);
+
 			Legends.createCircleLegend(z, g, width, cause_death, cause_keys, x)
 		})
     }
 
 	return (
-        <div id={"chart"}>
+        <div id={"reign_chart"}>
             
         </div>
 	);
 };
 
-export default BarChart;
+export default ReignLengthChart;
