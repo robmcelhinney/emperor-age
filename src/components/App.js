@@ -15,9 +15,6 @@ class App extends Component {
 		let reignChartData = JSON.parse(JSON.stringify(emperor))
 		let medianData = JSON.parse(JSON.stringify(emperor))
 
-		console.log("barChartData: ", barChartData)
-		console.log("reignChartData: ", reignChartData)
-
 		return (
 			<div id={"content"}>
 				<Header />

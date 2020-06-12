@@ -11,7 +11,6 @@ const BarChart = (props) => {
 
     function createBarChart() {
 		let data = props.data
-		console.log("createBarChart hello data: ", data)
 		let cause_keys = Object.keys(constClass.CAUSE_COLOUR).map(function(key){
 			return key;
 		});
@@ -22,7 +21,6 @@ const BarChart = (props) => {
         let z = d3.scaleOrdinal()
 			.range(["#38b3fa", "#800080", "#748091"]);
 
-		console.log("createBarChart hello 2")
 		// fix pre-processing
 		let keys = [];
 		for (let key in data[0]){
@@ -48,7 +46,6 @@ const BarChart = (props) => {
 		},
 		height = 900
 		let width = 100;
-		console.log("createBarChart: width ", width)
 		if (typeof window !== `undefined`) {
 			width =  window.innerWidth - margin.left - margin.right
 		}
@@ -62,7 +59,6 @@ const BarChart = (props) => {
 		else {
 			viewbox_width = 1200
 		}
-		console.log("createBarChart: width ", width)
 	
 		// append the svg object to the body of the page
 		let svg = d3.select("div#chart")
@@ -107,7 +103,6 @@ const BarChart = (props) => {
 				return y(d.data.name);
 			})
 			.attr("x", function(d) {
-				// console.log("d: ", d)
 				return x(d[0]);
 			})
 			.attr("width", function(d) {
@@ -167,8 +162,6 @@ const BarChart = (props) => {
 		let cause_death = d3.scaleOrdinal()
 			.range(cause_values);
 		Legends.createCircleLegend(z, g, width, cause_death, cause_keys, x)
-
-		console.log("createBarChart hello 3")
     }
 
 	return (

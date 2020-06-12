@@ -105,7 +105,6 @@ const ReignLengthChart = (props) => {
 				return y(d.data.name);
 			})
 			.attr("x", function(d) {
-				// console.log("d: ", d)
 				return x(d[0]);
 			})
 			.attr("width", function(d) {
