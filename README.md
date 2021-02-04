@@ -1,5 +1,5 @@
 # emperor-age | Data visualisation for Roman Emperor's Ages using D3.js
-## From Augustus to Theodosius (63 BCE to 395 CE)
+## From Augustus to Avitus (63 BCE to 455 CE)
 
 Viewable at [https://robmcelhinney.github.io/emperor-age/](
 https://robmcelhinney.github.io/emperor-age/)
@@ -14,7 +14,7 @@ https://robmcelhinney.github.io/emperor-age/)
 
 ## Run python to convert csv file to json (already done)
 
-    $ python python/csv-json.py
+    $ cd python && python csv-json.py
 
 ## Start & watch
 
@@ -31,4 +31,4 @@ https://robmcelhinney.github.io/emperor-age/)
 * Gatsby - Static site generator for React
 
 ## Acknowledgments
-Data retrieved from [Zonination](https://github.com/zonination/emperors/) but I have made some small changes in line with Wikipedia's information
+Data retrieved from [Zonination](https://github.com/zonination/emperors/) but I have made some small changes in line with Wikipedia's information & Edward Gibbon's The Decline and Fall of the Roman Empire.
