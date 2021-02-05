@@ -42,7 +42,7 @@ const MedianReignLength = (props) => {
             <div id={"median"}>Median Reign: {medianReign} years</div>
             <div id={"median"}>Median Age at death: {medianAge} years</div>
             <br/>
-            <div>Missing data for Numerian, Florian, Severus II, Vetranio, Carinus</div>
+            <div>Missing data for Numerian, Florian, Severus II, Vetranio, Carinus, Olybrius, Glycerius</div>
             <div>Rounded up reigns shorter than 1 year</div>
             <div>Data retrieved from <a href="https://github.com/zonination/emperors/">Zonination</a> but I have made some small changes in line with Wikipedia</div>
         </div>

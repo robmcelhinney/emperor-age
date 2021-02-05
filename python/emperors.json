@@ -1,6 +1,5 @@
 [
     {
-        "datasetid": "roman-emperors",
         "recordid": "956a5810c58f0d2599fe7defe1cfbcac827955ca",
         "fields": {
             "reign_start": "0306-07-25T00:00:00Z",
@@ -34,7 +33,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "b32b615d2965c4fc76bb19612fd48c780baf7efb",
         "fields": {
             "reign_start": "0253-10-15T00:00:00Z",
@@ -63,7 +61,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "e238337b3df8a9e378ead1fd33c2fb707a3b9b68",
         "fields": {
             "reign_start": "0268-09-15T00:00:00Z",
@@ -98,7 +95,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "daca6ab403d07902f94eb5211bf6964d3c16858b",
         "fields": {
             "reign_start": "0270-01-15T00:00:00Z",
@@ -133,7 +129,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "a6a5188611e4bfa056b67fd18f5750dabc7ffc94",
         "fields": {
             "reign_start": "0360-02-14T00:00:00Z",
@@ -168,7 +163,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "428dab38885cecba6406973808b93abbd016acb6",
         "fields": {
             "reign_start": "0379-01-01T00:00:00Z",
@@ -203,7 +197,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "7a912e518afc053fdcc2cb15f8ab7cb0bd998af1",
         "fields": {
             "reign_start": "0177-01-01T00:00:00Z",
@@ -233,7 +226,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "ad6b27e540c37d485d706197a8340826bafe757e",
         "fields": {
             "reign_start": "0238-03-22T00:00:00Z",
@@ -267,7 +259,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "540cdcf281adf82f1683c1cac2d5cb6a21e2dbbf",
         "fields": {
             "reign_start": "0238-03-22T00:00:00Z",
@@ -302,7 +293,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "5e35802395d76852cc69e81fb35d27b4c1a8b4bd",
         "fields": {
             "reign_start": "0283-08-01T00:00:00Z",
@@ -331,7 +321,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "a11d01a3b3cf8d24b16fce8749cece22a27efb10",
         "fields": {
             "reign_start": "0057-09-18T00:00:00Z",
@@ -368,7 +357,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "37ecfa10f84396137c30659a075fce40c46f381a",
         "fields": {
             "reign_start": "0253-08-15T00:00:00Z",
@@ -402,7 +390,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "f07fb826fee9e00c503f8482e9a185b95407a7cb",
         "fields": {
             "reign_start": "0270-09-15T00:00:00Z",
@@ -436,7 +423,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "5070d503fd280cb7f90a57b267949c6b958ddc95",
         "fields": {
             "reign_start": "0276-06-15T00:00:00Z",
@@ -464,7 +450,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "b3c9654f74e3a94812316a8602fc313062cb920b",
         "fields": {
             "reign_start": "0081-09-14T00:00:00Z",
@@ -498,7 +483,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "97ebec120cc554888bfc51fc61f18eecf9957dc2",
         "fields": {
             "reign_start": "0096-09-18T00:00:00Z",
@@ -532,7 +516,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "fb363184697ce16c4a0977045064996aa20c1581",
         "fields": {
             "reign_start": "0238-04-22T00:00:00Z",
@@ -566,7 +549,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "a6c62e9ff8e6f40118852df2b8481a3cd23b8954",
         "fields": {
             "reign_start": "0282-10-01T00:00:00Z",
@@ -601,7 +583,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "dfabd9b91af8fb7838626a5ec07f0459d21347ff",
         "fields": {
             "reign_start": "0305-05-01T00:00:00Z",
@@ -633,7 +614,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "5afa9d7a2cc88818abd3ce69abf2c0d057e6ffc0",
         "fields": {
             "reign_start": "0337-05-22T00:00:00Z",
@@ -667,7 +647,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "8ede5e7de6f6c6dac8d2086dfdad42f50b558bec",
         "fields": {
             "reign_start": "0037-03-18T00:00:00Z",
@@ -704,7 +683,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "cac129d91b228fcd0c32b84fd334dec95af549e4",
         "fields": {
             "reign_start": "0052-01-25T00:00:00Z",
@@ -740,7 +718,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "ac56873abb9577d187a8153d9cb0c11c23f69332",
         "fields": {
             "reign_start": "0161-03-07T00:00:00Z",
@@ -775,7 +752,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "81f5fd4f689eb75acf026adc5f2323a02f133b5c",
         "fields": {
             "reign_start": "0284-11-20T00:00:00Z",
@@ -805,7 +781,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "02c9e2b25aeb5112c2d3b085ade31548812f8a1c",
         "fields": {
             "reign_start": "0193-04-09T00:00:00Z",
@@ -840,7 +815,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "f6a6b7335a0370b6764992afe62d2b34070acacb",
         "fields": {
             "reign_start": "0238-04-22T00:00:00Z",
@@ -874,7 +848,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "d323c12893683f42fc9f1f21699d070f49518ab5",
         "fields": {
             "reign_start": "0306-10-08T00:00:00Z",
@@ -908,7 +881,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "96de647113c5cabdf19a4e5ce76a04ef6ef7bfd4",
         "fields": {
             "reign_start": "0161-03-07T00:00:00Z",
@@ -943,7 +915,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "7a64fb64790d9f75722e357cd93b738ea824f101",
         "fields": {
             "reign_start": "0364-02-26T00:00:00Z",
@@ -974,7 +945,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "5057bb8378c54e67d3b00f2cafde66da662bd405",
         "fields": {
             "reign_start": "0069-04-17T00:00:00Z",
@@ -1009,7 +979,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "532f4833e610bed83fb251b5f12c6ac55aaa9b98",
         "fields": {
             "reign_start": "0193-01-01T00:00:00Z",
@@ -1044,7 +1013,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "69715c10d2e24ae0a92bb80a532944ccd0041f35",
         "fields": {
             "reign_start": "0209-01-01T00:00:00Z",
@@ -1080,7 +1048,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "1c355d992aee3b0826fd9770b0111e8d7c6b1dfb",
         "fields": {
             "reign_start": "0305-05-01T00:00:00Z",
@@ -1116,7 +1083,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "84411448ca424718813133736e4da6223db74f0d",
         "fields": {
             "reign_start": "0311-05-01T00:00:00Z",
@@ -1151,7 +1117,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "923c59b6f420cbee6c800442287ae46e6f84c535",
         "fields": {
             "reign_start": "0375-11-17T00:00:00Z",
@@ -1188,7 +1153,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "17035db9fe45043a101ed6004a464b56a1649a0a",
         "fields": {
             "reign_start": "0069-12-21T00:00:00Z",
@@ -1223,7 +1187,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "f39aa053f88f2eb72b203b4e56f55202c96e7bcf",
         "fields": {
             "reign_start": "0305-05-01T00:00:00Z",
@@ -1254,7 +1217,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "0ac3fa5df6857f784cf906a5cc39e782a7884b72",
         "fields": {
             "reign_start": "0068-06-08T00:00:00Z",
@@ -1291,7 +1253,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "ba33d1283e35e782dd5adfa9eeea6230151976d9",
         "fields": {
             "reign_start": "0218-06-08T00:00:00Z",
@@ -1327,7 +1288,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "21aa16320a9a7482a5a496cad72e5b7f39b64a4f",
         "fields": {
             "reign_start": "0244-02-14T00:00:00Z",
@@ -1363,7 +1323,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "754fef6a5940dd7c6e07502cf5f7a59e18259e3c",
         "fields": {
             "reign_start": "0079-06-24T00:00:00Z",
@@ -1397,7 +1356,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "bfc6f2084287881fa8bae69c864049d05a153f1a",
         "fields": {
             "reign_start": "0286-04-01T00:00:00Z",
@@ -1433,7 +1391,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "8fec97dfde4cbed01e1839ac6e4a5b4824a148b2",
         "fields": {
             "reign_start": "0337-05-22T00:00:00Z",
@@ -1468,7 +1425,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "1635fc3da722c262995deb9d3f822d3aa078aaeb",
         "fields": {
             "reign_start": "0363-06-26T00:00:00Z",
@@ -1503,7 +1459,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "c8943bc87603b1e9752ef9a1f9337ed1ecea96ac",
         "fields": {
             "reign_start": "0364-03-28T00:00:00Z",
@@ -1539,7 +1494,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "3806b3127f795ef0f29edd45b0ab03419098976c",
         "fields": {
             "reign_start": "0198-01-01T00:00:00Z",
@@ -1574,7 +1528,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "d8cddc49ecb3c7a9935bdeb0498706d0ab375a33",
         "fields": {
             "reign_start": "0249-10-01T00:00:00Z",
@@ -1609,7 +1562,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "edda2d8e71e0b615bb63d4c8239ab2d6b6c28538",
         "fields": {
             "reign_start": "0350-03-01T00:00:00Z",
@@ -1642,7 +1594,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "32d1d1fa2ea00c565c6264ebeaf112112286ec23",
         "fields": {
             "reign_start": "0276-09-15T00:00:00Z",
@@ -1677,7 +1628,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "a7c53e1c2fd30b6efe6f57f0bf90998474e7cfdf",
         "fields": {
             "reign_start": "0367-08-04T00:00:00Z",
@@ -1713,7 +1663,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "4c2bd0efbde177042d5281379aca37087053a594",
         "fields": {
             "reign_start": "0235-03-20T00:00:00Z",
@@ -1747,7 +1696,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "22fc328c7955f21cd3d1e8cab37a8359d7bf8719",
         "fields": {
             "reign_start": "0283-08-01T00:00:00Z",
@@ -1775,7 +1723,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "31511a5c507adce68c4b720dd2fff719b4654868",
         "fields": {
             "reign_start": "0117-08-11T00:00:00Z",
@@ -1809,7 +1756,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "ee6b3191991157bceb888f45e93eb504445ce0b8",
         "fields": {
             "reign_start": "0222-03-13T00:00:00Z",
@@ -1843,7 +1789,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "0eb1d8e64dc65101358b4e40d6246a00a1376765",
         "fields": {
             "reign_start": "0251-06-15T00:00:00Z",
@@ -1877,7 +1822,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "78cd47f267ad877340fe08e482cd6d75bf333a24",
         "fields": {
             "reign_start": "0069-01-15T00:00:00Z",
@@ -1906,7 +1850,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "18f2337ef0c1b7fe995e49ff18617b3891ed6d0c",
         "fields": {
             "reign_start": "0217-04-11T00:00:00Z",
@@ -1941,7 +1884,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "0efc3325ff28a425c4ed95c56a64d014e0b416f8",
         "fields": {
             "reign_start": "0098-01-28T00:00:00Z",
@@ -1975,7 +1917,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "a86cf14c70f3b6e9ce69afce79d128cdc5e2651f",
         "fields": {
             "reign_start": "0138-07-10T00:00:00Z",
@@ -2009,7 +1950,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "334da9fe90d9835ffc98a2c85b495d16a26ac518",
         "fields": {
             "reign_start": "0193-03-28T00:00:00Z",
@@ -2045,7 +1985,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "334db9d795d07e788f260098d7f43acfbd98b1db",
         "fields": {
             "reign_start": "0251-06-15T00:00:00Z",
@@ -2081,7 +2020,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "69eb51535f1919a4ae32ac2cc7aed59898a289f5",
         "fields": {
             "reign_start": "0037-01-16T00:00:00Z",
@@ -2117,7 +2055,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "322e9b5594b10ba689e286cc4bd1d80319677e7b",
         "fields": {
             "reign_start": "0238-04-22T00:00:00Z",
@@ -2151,7 +2088,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "recordid": "999bfe7467e90b0a8e2e215c985543a67cac4bdb",
         "fields": {
             "reign_start": "0253-10-15T00:00:00Z",
@@ -2186,7 +2122,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "68b67a522578e65981230e2a065572b960ac1fd8",
         "fields": {
             "reign_start": "0275-09-25T00:00:00Z",
@@ -2222,7 +2157,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "a6a089d1e2bbb5ff45e13c6d4488a9234e83016a",
         "fields": {
             "reign_start": "0308-11-11T00:00:00Z",
@@ -2253,7 +2187,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "1fa7f9d420b7e34be4181e39310a32aa3d0a3d6d",
         "fields": {
             "reign_start": "0054-10-13T00:00:00Z",
@@ -2289,7 +2222,6 @@
     },
 
     {
-        "datasetid": "roman-emperors",
         "recordid": "3b8aff4f797147483559a4f48323594196a5bddb",
         "fields": {
             "reign_start": "0337-05-22T00:00:00Z",
@@ -2325,7 +2257,6 @@
 
 
     {
-        "datasetid": "roman-emperors",
         "fields": {
             "reign_start": "0375-11-17T00:00:00Z",
             "index": "69",
@@ -2345,7 +2276,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "fields": {
             "reign_start": "0393-01-23T00:00:00Z",
             "index": "70",
@@ -2364,7 +2294,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "fields": {
             "reign_start": "0425-01-23T00:00:00Z",
             "index": "71",
@@ -2383,7 +2312,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "fields": {
             "reign_start": "0455-03-17T00:00:00Z",
             "index": "72",
@@ -2402,7 +2330,6 @@
         }
     },
     {
-        "datasetid": "roman-emperors",
         "fields": {
             "reign_start": "0455-07-09T00:00:00Z",
             "index": "73",
@@ -2418,6 +2345,131 @@
             "era": "Unknown",
             "name_full": "Flavius Maccilius Eparchius Avitus",
             "name": "Eparchius Avitus"
+        }
+    },
+    {
+        "fields": {
+            "reign_start": "0457-07-09T00:00:00Z",
+            "index": "74",
+            "cause": "Assassination",
+            "killer": "Unknown",
+            "birth_cty": "Unknown",
+            "rise": "Appointment by Army",
+            "birth": "0420-01-01T00:00:00Z",
+            "dynasty": "Unknown",
+            "death": "0461-08-07T00:00:00Z",
+            "birth_prv": "Unknown",
+            "reign_end": "0461-08-07T00:00:00Z",
+            "era": "Unknown",
+            "name_full": "Julius Valerius Majorianus",
+            "name": "Majorian"
+        }
+    },
+    {
+        "fields": {
+            "reign_start": "0461-11-19T00:00:00Z",
+            "index": "75",
+            "cause": "Natural Causes",
+            "killer": "Unknown",
+            "birth_cty": "Lucania",
+            "rise": "Appointment by Emperor",
+            "birth": "0420-01-01T00:00:00Z",
+            "dynasty": "Unknown",
+            "death": "0465-08-15T00:00:00Z",
+            "birth_prv": "Italia",
+            "reign_end": "0465-08-15T00:00:00Z",
+            "era": "Unknown",
+            "name_full": "Flavius Libius Severus Serpentius Augustus",
+            "name": "Libius Severus"
+        }
+    },
+    {
+        "fields": {
+            "reign_start": "0467-11-19T00:00:00Z",
+            "index": "76",
+            "cause": "Died in Battle",
+            "killer": "Unknown",
+            "birth_cty": "Constantinople",
+            "rise": "Appointment by Emperor",
+            "birth": "0420-01-01T00:00:00Z",
+            "dynasty": "Unknown",
+            "death": "0472-08-15T00:00:00Z",
+            "birth_prv": "Thrace",
+            "reign_end": "0472-07-11T00:00:00Z",
+            "era": "Unknown",
+            "name_full": "Procopius Anthemius",
+            "name": "Anthemius"
+        }
+    },
+    {
+        "fields": {
+            "reign_start": "0472-07-11T00:00:00Z",
+            "index": "77",
+            "cause": "Natural Causes",
+            "killer": "Dropsy",
+            "birth_cty": "Rome",
+            "rise": "Appointment by Emperor",
+            "dynasty": "Italia",
+            "death": "0472-11-02T00:00:00Z",
+            "birth_prv": "Italia",
+            "reign_end": "0472-11-02T00:00:00Z",
+            "era": "Unknown",
+            "name_full": "Flavius Anicius Olybrius",
+            "name": "Olybrius"
+        }
+    },
+    {
+        "fields": {
+            "reign_start": "0473-01-01T00:00:00Z",
+            "index": "78",
+            "cause": "Unknown",
+            "killer": "Unknown",
+            "birth_cty": "Unknown",
+            "rise": "Appointment by Emperor",
+            "birth": "Unknown",
+            "dynasty": "Unknown",
+            "death": "0480-01-01T00:00:00Z",
+            "birth_prv": "Dalmatian",
+            "reign_end": "0474-06-24T00:00:00Z",
+            "era": "Unknown",
+            "name_full": "Procopius Anthemius",
+            "name": "Glycerius"
+        }
+    },
+    {
+        "fields": {
+            "reign_start": "0474-06-01T00:00:00Z",
+            "index": "79",
+            "cause": "Assassination",
+            "killer": "Glycerius",
+            "birth_cty": "Unknown",
+            "rise": "Seized Power",
+            "birth": "0430-01-01T00:00:00Z",
+            "dynasty": "Unknown",
+            "death": "0480-05-01T00:00:00Z",
+            "birth_prv": "Unknown",
+            "reign_end": "0475-08-28T00:00:00Z",
+            "era": "Unknown",
+            "name_full": "Julius Nepo",
+            "name": "Julius Nepo"
+        }
+    },
+    {
+        "fields": {
+            "reign_start": "0475-10-31T00:00:00Z",
+            "index": "80",
+            "cause": "Unknown",
+            "killer": "Unknown",
+            "birth_cty": "Unknown",
+            "rise": "Seized Power",
+            "birth": "0460-01-01T00:00:00Z",
+            "dynasty": "Unknown",
+            "death": "0507-01-01T00:00:00Z",
+            "birth_prv": "Unknown",
+            "reign_end": "0476-09-04T00:00:00Z",
+            "era": "Unknown",
+            "name_full": "Romulus Augustulus",
+            "name": "Romulus Augustulus"
         }
     }
 ]

@@ -7,12 +7,209 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <meta name="note" content="environment=development" />
+        <style data-href="/emperor-age/styles.40742e7bd6189f4f939f.css">
+            @font-face {
+                font-family: Constantine;
+                src: url(/emperor-age/static/Constantine-ae22d77c6dfe8c4f73b516b19d1f5203.ttf);
+            }
+            #app,
+            #root,
+            body,
+            html {
+                font-family: promixa-nova, sans-serif;
+                height: 100%;
+                margin: 0;
+            }
+            body {
+                background-color: #f5f5f5;
+            }
+            #content {
+                padding-right: 0.75em;
+                padding-left: 0.75em;
+                margin: 2em auto 1em;
+            }
+            .Header {
+                font-size: 1.3em;
+                text-align: center;
+            }
+            .Heading {
+                font-family: Constantine;
+                font-size: 2em;
+                font-weight: 600;
+            }
+            .tick > line {
+                opacity: 0.3;
+                stroke-dasharray: 5, 5;
+            }
+            svg text.label {
+                fill: #fff;
+                font: 15px;
+                font-weight: 400;
+                text-anchor: middle;
+            }
+            .text-align-centre {
+                text-align: center;
+            }
+            #footer {
+                margin-top: 3em;
+                font-size: 0.85em;
+                color: #999;
+                text-decoration: none;
+                bottom: 0;
+            }
+            #footer a,
+            #footer a:visited,
+            p a,
+            p a:visited {
+                color: #2196f3;
+            }
+        </style>
+        <meta name="generator" content="Gatsby 2.23.3" />
         <title data-react-helmet="true"></title>
-        <script src="/socket.io/socket.io.js"></script>
+        <link
+            as="script"
+            rel="preload"
+            href="/emperor-age/webpack-runtime-55539e39609021987799.js"
+        />
+        <link
+            as="script"
+            rel="preload"
+            href="/emperor-age/framework-dd824ea10d83e3e5a212.js"
+        />
+        <link
+            as="script"
+            rel="preload"
+            href="/emperor-age/app-f42f628385511864623b.js"
+        />
+        <link
+            as="script"
+            rel="preload"
+            href="/emperor-age/styles-dd3841a4888192e20843.js"
+        />
+        <link
+            as="script"
+            rel="preload"
+            href="/emperor-age/component---src-pages-index-js-2a83f91cf3f859e387f8.js"
+        />
+        <link
+            as="fetch"
+            rel="preload"
+            href="/emperor-age/page-data\index\page-data.json"
+            crossorigin="anonymous"
+        />
+        <link
+            as="fetch"
+            rel="preload"
+            href="/emperor-age/page-data\app-data.json"
+            crossorigin="anonymous"
+        />
     </head>
     <body>
-        <div id="___gatsby"></div>
-        <script src="/commons.js"></script>
+        <div id="___gatsby">
+            <div style="outline: none;" tabindex="-1" id="gatsby-focus-wrapper">
+                <div id="content">
+                    <div class="Header">
+                        <div class="Heading">Roman Emperors&#x27; Ages</div>
+                        <div>From Augustus to Avitus</div>
+                        <div>(63 BCE to 455 CE)</div>
+                    </div>
+                    <div id="chart"></div>
+                    <div class="Header">
+                        <div class="Heading">
+                            Roman Emperors&#x27; Reign Lengths
+                        </div>
+                    </div>
+                    <div id="reign_chart"></div>
+                    <div class="Header">
+                        <div class="Heading">Extra Info</div>
+                        <div id="median">
+                            Median Reign:
+                            <!-- -->0<!-- -->
+                            years
+                        </div>
+                        <div id="median">
+                            Median Age at death:
+                            <!-- -->0<!-- -->
+                            years
+                        </div>
+                        <br />
+                        <div>
+                            Missing data for Numerian, Florian, Severus II,
+                            Vetranio, Carinus
+                        </div>
+                        <div>Rounded up reigns shorter than 1 year</div>
+                        <div>
+                            Data retrieved from
+                            <a href="https://github.com/zonination/emperors/"
+                                >Zonination</a
+                            >
+                            but I have made some small changes in line with
+                            Wikipedia
+                        </div>
+                    </div>
+                    <div
+                        id="footer"
+                        class="text-align-centre"
+                        style="color: black;"
+                    >
+                        Any queries/requests, contact me @<a
+                            href="https://twitter.com/RMcElhinney"
+                            >Rob McElhinney</a
+                        >
+                        | Code Viewable @<a
+                            href="https://github.com/robmcelhinney/emperor-age"
+                            >github</a
+                        >
+                    </div>
+                </div>
+            </div>
+            <div
+                id="gatsby-announcer"
+                style="
+                    position: absolute;
+                    top: 0;
+                    width: 1px;
+                    height: 1px;
+                    padding: 0;
+                    overflow: hidden;
+                    clip: rect(0, 0, 0, 0);
+                    white-space: nowrap;
+                    border: 0;
+                "
+                aria-live="assertive"
+                aria-atomic="true"
+            ></div>
+        </div>
+        <script id="gatsby-script-loader">
+            /*<![CDATA[*/ window.pagePath = "/" /*]]>*/
+        </script>
+        <script id="gatsby-chunk-mapping">
+            /*<![CDATA[*/ window.___chunkMapping = {
+                app: ["/app-f42f628385511864623b.js"],
+                "component---src-pages-index-js": [
+                    "/component---src-pages-index-js-2a83f91cf3f859e387f8.js",
+                ],
+            } /*]]>*/
+        </script>
+        <script
+            src="/emperor-age/component---src-pages-index-js-2a83f91cf3f859e387f8.js"
+            async=""
+        ></script>
+        <script
+            src="/emperor-age/styles-dd3841a4888192e20843.js"
+            async=""
+        ></script>
+        <script
+            src="/emperor-age/app-f42f628385511864623b.js"
+            async=""
+        ></script>
+        <script
+            src="/emperor-age/framework-dd824ea10d83e3e5a212.js"
+            async=""
+        ></script>
+        <script
+            src="/emperor-age/webpack-runtime-55539e39609021987799.js"
+            async=""
+        ></script>
     </body>
 </html>
