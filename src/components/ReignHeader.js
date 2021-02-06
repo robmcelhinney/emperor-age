@@ -9,8 +9,8 @@ class ReignHeader extends Component {
 			<div className={"Header"}>
                 <div className={"Heading"}>Roman Emperors' Reign Lengths</div>
 			</div>
-		);
+		)
 	}
   }
 
-export default ReignHeader;
+export default ReignHeader

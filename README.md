@@ -1,5 +1,5 @@
 # emperor-age | Data visualisation for Roman Emperor's Ages using D3.js
-## From Augustus to Avitus (63 BCE to 455 CE)
+## From Augustus to Romulus Augustulus (63 BCE to 476 CE End of Western Empire)
 
 Viewable at [https://robmcelhinney.github.io/emperor-age/](
 https://robmcelhinney.github.io/emperor-age/)
@@ -14,7 +14,7 @@ https://robmcelhinney.github.io/emperor-age/)
 
 ## Run python to convert csv file to json (already done)
 
-    $ cd python && python csv-json.py
+    $ cd python && py csv-json.py
 
 ## Start & watch
 

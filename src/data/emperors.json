@@ -72,6 +72,13 @@
         "Post Emperor": 0
     },
     {
+        "index": "47",
+        "name": "Numerian",
+        "cause": "Unknown",
+        "Emperor": 1,
+        "Post Emperor": 0
+    },
+    {
         "index": "2",
         "name": "Tiberius",
         "cause": "Assassination",
@@ -93,6 +100,13 @@
         "cause": "Assassination",
         "Pre Emperor": 56,
         "Emperor": 5,
+        "Post Emperor": 0
+    },
+    {
+        "index": "44",
+        "name": "Florian",
+        "cause": "Assassination",
+        "Emperor": 1,
         "Post Emperor": 0
     },
     {
@@ -125,6 +139,13 @@
         "cause": "Natural Causes",
         "Pre Emperor": 52,
         "Emperor": 1,
+        "Post Emperor": 0
+    },
+    {
+        "index": "53",
+        "name": "Severus II",
+        "cause": "Assassination",
+        "Emperor": 2,
         "Post Emperor": 0
     },
     {
@@ -352,6 +373,13 @@
         "Post Emperor": 0
     },
     {
+        "index": "61",
+        "name": "Vetranio",
+        "cause": "Unknown",
+        "Emperor": 1,
+        "Post Emperor": 5
+    },
+    {
         "index": "45",
         "name": "Probus",
         "cause": "Assassination",
@@ -373,6 +401,13 @@
         "cause": "Assassination",
         "Pre Emperor": 62,
         "Emperor": 3,
+        "Post Emperor": 0
+    },
+    {
+        "index": "48",
+        "name": "Carinus",
+        "cause": "Died in Battle",
+        "Emperor": 2,
         "Post Emperor": 0
     },
     {
@@ -542,5 +577,59 @@
         "Pre Emperor": 60,
         "Emperor": 1,
         "Post Emperor": 1
+    },
+    {
+        "index": "74",
+        "name": "Majorian",
+        "cause": "Assassination",
+        "Pre Emperor": 37,
+        "Emperor": 4,
+        "Post Emperor": 0
+    },
+    {
+        "index": "75",
+        "name": "Libius Severus",
+        "cause": "Natural Causes",
+        "Pre Emperor": 41,
+        "Emperor": 3,
+        "Post Emperor": 0
+    },
+    {
+        "index": "76",
+        "name": "Anthemius",
+        "cause": "Died in Battle",
+        "Pre Emperor": 47,
+        "Emperor": 4,
+        "Post Emperor": 1
+    },
+    {
+        "index": "77",
+        "name": "Olybrius",
+        "cause": "Natural Causes",
+        "Emperor": 1,
+        "Post Emperor": 0
+    },
+    {
+        "index": "78",
+        "name": "Glycerius",
+        "cause": "Unknown",
+        "Emperor": 1,
+        "Post Emperor": 5
+    },
+    {
+        "index": "79",
+        "name": "Julius Nepo",
+        "cause": "Assassination",
+        "Pre Emperor": 44,
+        "Emperor": 1,
+        "Post Emperor": 4
+    },
+    {
+        "index": "80",
+        "name": "Romulus Augustulus",
+        "cause": "Unknown",
+        "Pre Emperor": 15,
+        "Emperor": 1,
+        "Post Emperor": 30
     }
 ]

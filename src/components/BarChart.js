@@ -10,32 +10,36 @@ const BarChart = (props) => {
       }, [])
 
     function createBarChart() {
-		let data = props.data
+		let data = []
+		for (let index in props.data){
+			if ("Pre Emperor" in props.data[index])
+				data.push(props.data[index])
+		}
+
 		let cause_keys = Object.keys(constClass.CAUSE_COLOUR).map(function(key){
-			return key;
-		});
+			return key
+		})
 		let cause_values = Object.keys(constClass.CAUSE_COLOUR).map(function(key){
-			return constClass.CAUSE_COLOUR[key];
-		});
+			return constClass.CAUSE_COLOUR[key]
+		})
         
         let z = d3.scaleOrdinal()
-			.range(["#38b3fa", "#800080", "#748091"]);
+			.range(["#38b3fa", "#800080", "#748091"])
 
 		// fix pre-processing
-		let keys = [];
+		let keys = []
 		for (let key in data[0]){
-			// if (key !== "name" && key !== "index" && key !== "cause" && key !== "Pre Emperor" && key !== "Post Emperor")
 			if (key !== "name" && key !== "index" && key !== "cause")
-				keys.push(key);
+				keys.push(key)
 		}
 		data.forEach(function(d){
-			d.total = 0;
+			d.total = 0
 			keys.forEach(function(k){
-				d.total += d[k];
+				d.total += d[k]
 			})
-		});
+		})
 		data.sort(function(x, y){
-			return x["index"] - y["index"];
+			return x["index"] - y["index"]
 		})
 
 		let margin = {
@@ -45,7 +49,7 @@ const BarChart = (props) => {
 			left: 30
 		},
 		height = 900
-		let width = 100;
+		let width = 100
 		if (typeof window !== `undefined`) {
 			width =  window.innerWidth - margin.left - margin.right
 		}
@@ -67,7 +71,7 @@ const BarChart = (props) => {
 			.attr("preserveAspectRatio", "xMinYMin meet"),
 		g = svg
 			.append("g")
-			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
 
 		// Add X axis
@@ -92,23 +96,23 @@ const BarChart = (props) => {
 			.data(d3.stack().keys(keys)(data))
 			.enter().append("g")
 			.attr("fill", function(d) {
-				return z(d.key);
+				return z(d.key)
 			})
 			.selectAll("rect")
 			.data(function(d) {
-				return d;
+				return d
 			})
 			.enter().append("rect")
 			.attr("y", function(d) {
-				return y(d.data.name);
+				return y(d.data.name)
 			})
 			.attr("x", function(d) {
-				return x(d[0]);
+				return x(d[0])
 			})
 			.attr("width", function(d) {
-				return -(x(d[0]) - x(d[1]));
+				return -(x(d[0]) - x(d[1]))
 			})
-			.attr("height", y.bandwidth());
+			.attr("height", y.bandwidth())
 
 
 		// Bottom Axis (Years)
@@ -148,7 +152,7 @@ const BarChart = (props) => {
 			.enter()
 			.append("circle")
 			.attr("cx", function() {
-				return -10;
+				return -10
 			})
 			.attr("cy", function(d) { return y(d.name) + 6 })
 			.attr("r", 4)
@@ -160,7 +164,7 @@ const BarChart = (props) => {
 		
 		
 		let cause_death = d3.scaleOrdinal()
-			.range(cause_values);
+			.range(cause_values)
 		Legends.createCircleLegend(z, g, width, cause_death, cause_keys, x)
     }
 
@@ -168,7 +172,7 @@ const BarChart = (props) => {
         <div id={"chart"}>
             
         </div>
-	);
-};
+	)
+}
 
-export default BarChart;
+export default BarChart

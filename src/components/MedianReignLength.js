@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react"
 const MedianReignLength = (props) => {
 	const [medianReign, setMedianReign] = useState(
 		0
-    );
+    )
 	const [medianAge, setMedianAge] = useState(
 		0
-    );
+    )
     
     useEffect(() => {
         getMedianReignLength()
@@ -14,24 +14,26 @@ const MedianReignLength = (props) => {
 
     const getMedianReignLength = () => {
         let data = props.data
-        let median_value = []
+        let median_reign = []
         let median_age = []
         let count = 0
         for (let row in data) {
-            const pre_reign = Number(data[row]["Pre Emperor"])
             const reign = Number(data[row]["Emperor"])
             const post_reign = Number(data[row]["Post Emperor"])
-            median_value.push(reign)
-            median_age.push(pre_reign + reign + post_reign)
+            if ("Pre Emperor" in data[row]) {
+                const pre_reign = Number(data[row]["Pre Emperor"])
+                median_age.push(pre_reign + reign + post_reign)
+            }
+            median_reign.push(reign)
             count++
         }
-        median_value.sort((a, b) => a - b)
+        median_reign.sort((a, b) => a - b)
         median_age.sort((a, b) => a - b)
         if (count % 2 === 0) {  // is even
-            setMedianReign((median_value[count / 2 - 1] + median_value[count / 2]) / 2)
+            setMedianReign((median_reign[count / 2 - 1] + median_reign[count / 2]) / 2)
             setMedianAge((median_age[count / 2 - 1] + median_age[count / 2]) / 2)
         } else { // is odd
-            setMedianReign(median_value[(count - 1) / 2])
+            setMedianReign(median_reign[(count - 1) / 2])
             setMedianAge(median_age[(count - 1) / 2])
         }
     }
@@ -46,7 +48,7 @@ const MedianReignLength = (props) => {
             <div>Rounded up reigns shorter than 1 year</div>
             <div>Data retrieved from <a href="https://github.com/zonination/emperors/">Zonination</a> but I have made some small changes in line with Wikipedia</div>
         </div>
-    );
+    )
   }
 
-export default MedianReignLength;
+export default MedianReignLength

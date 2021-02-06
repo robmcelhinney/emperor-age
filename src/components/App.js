@@ -24,8 +24,8 @@ class App extends Component {
 				<MedianReignLength data={medianData} />
 				<Footer />
 			</div>
-		);
+		)
 	}
   }
 
-export default App;
+export default App

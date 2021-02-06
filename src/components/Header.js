@@ -8,11 +8,11 @@ class Header extends Component {
 		return (
 			<div className={"Header"}>
                 <div className={"Heading"}>Roman Emperors' Ages</div>
-                <div>From Augustus to Avitus</div>
-                <div>(63 BCE to 455 CE)</div>
+                <div>From Augustus to Romulus Augustulus</div>
+                <div>(63 BCE to 476 CE End of Western Empire)</div>
 			</div>
-		);
+		)
 	}
   }
 
-export default Header;
+export default Header
