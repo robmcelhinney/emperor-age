@@ -1,12 +1,12 @@
 {
-  "name": "emperor-age",
+  "name": "roman-emperors",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://robmcelhinney.github.com/emperor-age",
+  "homepage": "https://robmcelhinney.github.io/roman-emperors",
   "author": "Robert McElhinney",
   "repository": {
     "type": "git",
-    "url": "https://github.com/robmcelhinney/emperor-age.git"
+    "url": "https://github.com/robmcelhinney/roman-emperors.git"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^6.1.5",

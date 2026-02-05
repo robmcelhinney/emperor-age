@@ -38,7 +38,7 @@ def load_json(path, default):
 
 def fetch_json(url):
     req = urllib.request.Request(
-        url, headers={"User-Agent": "emperor-age/1.0 (tooling)"}
+        url, headers={"User-Agent": "roman-emperors/1.0 (tooling)"}
     )
     for attempt in range(MAX_RETRIES):
         try:
@@ -128,7 +128,7 @@ def slugify(name):
 def download_thumbnail(filename, slug):
     encoded = urllib.parse.quote(filename)
     url = f"https://commons.wikimedia.org/wiki/Special:FilePath/{encoded}?width=64"
-    req = urllib.request.Request(url, headers={"User-Agent": "emperor-age/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "roman-emperors/1.0"})
     for attempt in range(MAX_RETRIES):
         try:
             with urllib.request.urlopen(req) as resp:

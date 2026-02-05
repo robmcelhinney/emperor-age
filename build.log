@@ -1,5 +1,5 @@
 
-> emperor-age@0.1.0 build
+> roman-emperors@0.1.0 build
 > gatsby build
 
 success compile gatsby files - 1.362s
@@ -30,7 +30,7 @@ the document head. Learn more at https://gatsby.dev/gatsby-head
 [2K[1A[2K[Gsuccess source and transform nodes - 0.040s
 
 [2K[1A[2K[Ginfo Writing GraphQL type definitions to
-/home/rob/code/emperor-age/.cache/schema.gql
+.cache/schema.gql
 
 [2K[1A[2K[Gsuccess building schema - 0.132s
 
@@ -64,20 +64,20 @@ Generating JavaScript bundles failed
 Cannot find module 'ajv/dist/compile/codegen'
 Require stack:
 -
-/home/rob/code/emperor-age/node_modules/ajv-keywords/dist/definitions/typeof.js
-- /home/rob/code/emperor-age/node_modules/ajv-keywords/dist/keywords/typeof.js
-- /home/rob/code/emperor-age/node_modules/ajv-keywords/dist/keywords/index.js
-- /home/rob/code/emperor-age/node_modules/ajv-keywords/dist/index.js
-- /home/rob/code/emperor-age/node_modules/schema-utils/dist/validate.js
-- /home/rob/code/emperor-age/node_modules/schema-utils/dist/index.js
-- /home/rob/code/emperor-age/node_modules/terser-webpack-plugin/dist/index.js
-- /home/rob/code/emperor-age/node_modules/gatsby/dist/utils/webpack-utils.js
-- /home/rob/code/emperor-age/node_modules/gatsby/dist/utils/webpack.config.js
-- /home/rob/code/emperor-age/node_modules/gatsby/dist/commands/build-html.js
-- /home/rob/code/emperor-age/node_modules/gatsby/dist/commands/build.js
-- /home/rob/code/emperor-age/node_modules/gatsby-cli/lib/create-cli.js
-- /home/rob/code/emperor-age/node_modules/gatsby-cli/lib/index.js
-- /home/rob/code/emperor-age/node_modules/gatsby/dist/bin/gatsby.js
-- /home/rob/code/emperor-age/node_modules/gatsby/cli.js
+node_modules/ajv-keywords/dist/definitions/typeof.js
+- node_modules/ajv-keywords/dist/keywords/typeof.js
+- node_modules/ajv-keywords/dist/keywords/index.js
+- node_modules/ajv-keywords/dist/index.js
+- node_modules/schema-utils/dist/validate.js
+- node_modules/schema-utils/dist/index.js
+- node_modules/terser-webpack-plugin/dist/index.js
+- node_modules/gatsby/dist/utils/webpack-utils.js
+- node_modules/gatsby/dist/utils/webpack.config.js
+- node_modules/gatsby/dist/commands/build-html.js
+- node_modules/gatsby/dist/commands/build.js
+- node_modules/gatsby-cli/lib/create-cli.js
+- node_modules/gatsby-cli/lib/index.js
+- node_modules/gatsby/dist/bin/gatsby.js
+- node_modules/gatsby/cli.js
 
 

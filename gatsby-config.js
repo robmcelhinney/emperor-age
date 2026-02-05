@@ -5,13 +5,12 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  siteMetadata: {
-    title: `Robert McElhinney Portfolio`,
-    siteUrl: `https://robmcelhinney.github.com/emperor-age`,
-    description: `Robert McElhinney Portfolio`,
-  },
-  pathPrefix: "/emperor-age",
-  plugins: [`gatsby-plugin-react-helmet`, "gatsby-transformer-json"
-  ]  
+    /* Your site config here */
+    siteMetadata: {
+        title: `Robert McElhinney Portfolio`,
+        siteUrl: `https://robmcelhinney.github.io/roman-emperors`,
+        description: `Robert McElhinney Portfolio`,
+    },
+    pathPrefix: "/roman-emperors",
+    plugins: [`gatsby-plugin-react-helmet`, "gatsby-transformer-json"],
 }

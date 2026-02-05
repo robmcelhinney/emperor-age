@@ -42,7 +42,7 @@ def download_geonames():
     if not CITIES_ZIP.exists():
         req = urllib.request.Request(
             GEONAMES_URL,
-            headers={"User-Agent": "emperor-age/1.0 (tooling)"},
+            headers={"User-Agent": "roman-emperors/1.0 (tooling)"},
         )
         with urllib.request.urlopen(req) as resp:
             CITIES_ZIP.write_bytes(resp.read())

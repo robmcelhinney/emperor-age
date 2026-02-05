@@ -6,7 +6,7 @@ from pathlib import Path
 OUT = Path(__file__).resolve().parents[1] / "public" / "world-110m.geojson"
 URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
 
-req = urllib.request.Request(URL, headers={"User-Agent": "emperor-age/1.0 (tooling)"})
+req = urllib.request.Request(URL, headers={"User-Agent": "roman-emperors/1.0 (tooling)"})
 with urllib.request.urlopen(req) as resp:
     topo = json.loads(resp.read().decode("utf-8"))
 

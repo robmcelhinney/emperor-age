@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { withPrefix } from "gatsby"
 import { Helmet } from "react-helmet"
 import BarChart from "./BarChart.js"
 import CrisisTimeline from "./CrisisTimeline.js"
@@ -22,7 +23,9 @@ class App extends Component {
         const attachImages = (items) =>
             items.map((item) => ({
                 ...item,
-                image: emperorImages[item.name] || null,
+                image: emperorImages[item.name]
+                    ? withPrefix(emperorImages[item.name])
+                    : null,
                 birth_lat: birthplaceCoords[item.name]?.lat ?? null,
                 birth_lng: birthplaceCoords[item.name]?.lng ?? null,
                 birth_city: birthplaceCoords[item.name]?.city ?? null,

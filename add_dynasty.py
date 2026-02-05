@@ -4,13 +4,13 @@ import csv
 
 # Read dynasty mapping from CSV
 dynasty_map = {}
-with open('/home/rob/code/emperor-age/python/emperors.csv', 'r') as f:
+with open('python/emperors.csv', 'r') as f:
     reader = csv.DictReader(f)
     for row in reader:
         dynasty_map[row['name'].strip()] = row['dynasty'].strip()
 
 # Read the existing emperors.json
-with open('/home/rob/code/emperor-age/src/data/emperors.json', 'r') as f:
+with open('src/data/emperors.json', 'r') as f:
     emperors = json.load(f)
 
 # Add dynasty to each emperor
@@ -22,7 +22,7 @@ for emperor in emperors:
         emperor['dynasty'] = 'Unknown'
 
 # Write back to file
-with open('/home/rob/code/emperor-age/src/data/emperors.json', 'w') as f:
+with open('src/data/emperors.json', 'w') as f:
     json.dump(emperors, f, indent=4)
 
 print(f"Added dynasty information to {len(emperors)} emperors")
