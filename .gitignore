@@ -10,12 +10,13 @@
 
 # production
 /build
-/public
+/public/*
 !/public/emperors/
 !/public/emperors/thumbs/
 !/public/emperors/thumbs/*
 !/public/icons/
 !/public/icons/*
+!/public/world-110m.geojson
 
 # misc
 .DS_Store
