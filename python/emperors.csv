@@ -61,7 +61,7 @@ index,name,name.full,birth,death,birth.cty,birth.prv,rise,reign.start,reign.end,
 60,Constans,CAESAR FLAVIVS IVLIVS CONSTANS AVGVSTVS,0320-01-01,0350-02-14,,Moesia,Birthright,0337-05-22,0350-02-14,Assassination,Usurper,Constantinian,Dominate,"birth, death, reign.end, reign.start are estimates.",
 61,Vetranio,CAESAR FLAVIVS VETRANIO AVGVSTVS,,0356-01-01,,Moesia,Seized Power,0350-03-01,0350-12-25,Unknown,Unknown,Constantinian,Dominate,death is only estimate,
 62,Julian,CAESAR FLAVIVS CLAVDIVS IVLIANVS AVGVSTVS,0331-07-01,0363-06-26,Constantinople,Thrace,Birthright,0360-02-14,0363-06-26,Died in Battle,Opposing Army,Constantinian,Dominate,"birth, reign.start is only estimate.",
-63,Jovian,CAESAR FLAVIVS IOVIANVS AVGVSTVS,0331-01-01,0364-02-17,Singidunum,Moesia,Appointment by Army,0363-06-26,0364-02-17,Natural Causes,Fire,Constantinian,Dominate,birth is only estimate.,
+63,Jovian,CAESAR FLAVIVS IOVIANVS AVGVSTVS,0331-01-01,0364-02-17,Singidunum,Moesia,Appointment by Army,0363-06-26,0364-02-17,Natural Causes,Fumes,Constantinian,Dominate,birth is only estimate.,
 64,Valentinian I,FLAVIVS VALENTINIANVS AVGVSTVS,0321-07-03,0375-11-17,Cibalae,Pannonia,Election,0364-02-26,0375-11-17,Natural Causes,Aneurism,Valentinian,Dominate,,Reddit user ironicosity
 65,Valens,FLAVIVS IVLIVS VALENS AVGVSTVS,0328-01-01,0378-08-09,Cibalae,Pannonia,Birthright,0364-03-28,0378-08-09,Died in Battle,Opposing Army,Valentinian,Dominate,birth is only estimate.,Reddit user ironicosity
 66,Gratian,FLAVIVS GRATIANVS AVGVSTVS,0359-04-18,0383-08-25,Sirmium,Pannonia,Birthright,0367-08-04,0383-08-25,Assassination,Own Army,Valentinian,Dominate,birth may also be 0359-05-23,Reddit user ironicosity

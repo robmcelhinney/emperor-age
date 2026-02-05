@@ -11,6 +11,11 @@
 # production
 /build
 /public
+!/public/emperors/
+!/public/emperors/thumbs/
+!/public/emperors/thumbs/*
+!/public/icons/
+!/public/icons/*
 
 # misc
 .DS_Store
@@ -25,3 +30,4 @@ yarn-debug.log*
 yarn-error.log*
 
 python/edward-gibbon-emperors.txt
+python/geonames_cache/

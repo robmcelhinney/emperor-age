@@ -1,0 +1,83 @@
+
+> emperor-age@0.1.0 build
+> gatsby build
+
+success compile gatsby files - 1.362s
+
+[2K[1A[2K[Gsuccess load gatsby config - 0.029s
+
+[2K[1A[2K[Gsuccess load plugins - 0.133s
+
+[2K[1A[2K[Gwarn gatsby-plugin-react-helmet: Gatsby now has built-in support for modifying
+the document head. Learn more at https://gatsby.dev/gatsby-head
+
+[2K[1A[2K[Gsuccess onPreInit - 0.004s
+
+[2K[1A[2K[Gsuccess delete html and css files from previous builds - 0.011s
+
+[2K[1A[2K[Gsuccess initialize cache - 0.056s
+
+[2K[1A[2K[Gsuccess copy gatsby files - 0.076s
+
+[2K[1A[2K[Gsuccess Compiling Gatsby Functions - 0.173s
+
+[2K[1A[2K[Gsuccess onPreBootstrap - 0.186s
+
+[2K[1A[2K[Gsuccess createSchemaCustomization - 0.001s
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.000s
+
+[2K[1A[2K[Gsuccess source and transform nodes - 0.040s
+
+[2K[1A[2K[Ginfo Writing GraphQL type definitions to
+/home/rob/code/emperor-age/.cache/schema.gql
+
+[2K[1A[2K[Gsuccess building schema - 0.132s
+
+[2K[1A[2K[Gsuccess createPages - 0.002s
+
+[2K[1A[2K[Gsuccess createPagesStatefully - 0.046s
+
+[2K[1A[2K[Ginfo Total nodes: 25, SitePage nodes: 1 (use --verbose for breakdown)
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.000s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[Gsuccess extract queries from components - 0.117s
+
+[2K[1A[2K[Gsuccess write out redirect data - 0.002s
+
+[2K[1A[2K[Gsuccess onPostBootstrap - 0.000s
+
+[2K[1A[2K[Ginfo bootstrap finished - 3.835s
+
+[2K[1A[2K[Gsuccess write out requires - 0.009s
+
+[2K[1A[2K[Gfailed Building production JavaScript and CSS bundles - 0.119s
+
+[2K[1A[2K[G
+ ERROR #98123  WEBPACK.BUILD-JAVASCRIPT
+
+Generating JavaScript bundles failed
+
+Cannot find module 'ajv/dist/compile/codegen'
+Require stack:
+-
+/home/rob/code/emperor-age/node_modules/ajv-keywords/dist/definitions/typeof.js
+- /home/rob/code/emperor-age/node_modules/ajv-keywords/dist/keywords/typeof.js
+- /home/rob/code/emperor-age/node_modules/ajv-keywords/dist/keywords/index.js
+- /home/rob/code/emperor-age/node_modules/ajv-keywords/dist/index.js
+- /home/rob/code/emperor-age/node_modules/schema-utils/dist/validate.js
+- /home/rob/code/emperor-age/node_modules/schema-utils/dist/index.js
+- /home/rob/code/emperor-age/node_modules/terser-webpack-plugin/dist/index.js
+- /home/rob/code/emperor-age/node_modules/gatsby/dist/utils/webpack-utils.js
+- /home/rob/code/emperor-age/node_modules/gatsby/dist/utils/webpack.config.js
+- /home/rob/code/emperor-age/node_modules/gatsby/dist/commands/build-html.js
+- /home/rob/code/emperor-age/node_modules/gatsby/dist/commands/build.js
+- /home/rob/code/emperor-age/node_modules/gatsby-cli/lib/create-cli.js
+- /home/rob/code/emperor-age/node_modules/gatsby-cli/lib/index.js
+- /home/rob/code/emperor-age/node_modules/gatsby/dist/bin/gatsby.js
+- /home/rob/code/emperor-age/node_modules/gatsby/cli.js
+
+

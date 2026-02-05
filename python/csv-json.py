@@ -16,7 +16,12 @@ def main():
         new_obj = {
             'index': obj['fields']['index'],
             'name': obj['fields']['name'],
-            'cause': obj['fields']['cause']
+            'cause': obj['fields']['cause'],
+            'dynasty': obj['fields'].get('dynasty', 'Unknown'),
+            'birth': obj['fields'].get('birth', ''),
+            'death': obj['fields'].get('death', ''),
+            'reign_start': obj['fields'].get('reign_start', ''),
+            'reign_end': obj['fields'].get('reign_end', '')
         }
 
         if ('reign_start' not in obj['fields'] or 'reign_end' not in obj['fields']):

@@ -1,0 +1,257 @@
+{
+  "Augustus": {
+    "city": "Rome",
+    "lat": 41.89193,
+    "lng": 12.51133
+  },
+  "Tiberius": {
+    "city": "Rome",
+    "lat": 41.89193,
+    "lng": 12.51133
+  },
+  "Caligula": {
+    "city": "Antitum",
+    "lat": 41.450367,
+    "lng": 12.624779
+  },
+  "Claudius": {
+    "city": "Lugdunum",
+    "lat": 45.74906,
+    "lng": 4.84789
+  },
+  "Nero": {
+    "city": "Antitum",
+    "lat": 41.450367,
+    "lng": 12.624779
+  },
+  "Galba": {
+    "city": "Terracina",
+    "lat": 41.29174,
+    "lng": 13.24359
+  },
+  "Otho": {
+    "city": "Terentinum",
+    "lat": 41.785,
+    "lng": 14.5506
+  },
+  "Vitellius": {
+    "city": "Rome",
+    "lat": 41.89193,
+    "lng": 12.51133
+  },
+  "Vespasian": {
+    "city": "Falacrine",
+    "lat": 42.61825,
+    "lng": 13.15968
+  },
+  "Titus": {
+    "city": "Rome",
+    "lat": 41.89193,
+    "lng": 12.51133
+  },
+  "Domitian": {
+    "city": "Rome",
+    "lat": 41.89193,
+    "lng": 12.51133
+  },
+  "Nerva": {
+    "city": "Narni",
+    "lat": 42.51956,
+    "lng": 12.52758
+  },
+  "Trajan": {
+    "city": "Italica",
+    "lat": 37.443901,
+    "lng": -6.046795
+  },
+  "Hadrian": {
+    "city": "Italica",
+    "lat": 37.443901,
+    "lng": -6.046795
+  },
+  "Antonius Pius": {
+    "city": "Lanuvium",
+    "lat": 41.6745,
+    "lng": 12.6972
+  },
+  "Marcus Aurelius": {
+    "city": "Rome",
+    "lat": 41.89193,
+    "lng": 12.51133
+  },
+  "Lucius Verus": {
+    "city": "Rome",
+    "lat": 41.89193,
+    "lng": 12.51133
+  },
+  "Commodus": {
+    "city": "Lanuvium",
+    "lat": 41.6745,
+    "lng": 12.6972
+  },
+  "Pertinax": {
+    "city": "Alba",
+    "lat": 52.03238,
+    "lng": 23.11652
+  },
+  "Didius Julianus": {
+    "city": "Milan",
+    "lat": 45.46427,
+    "lng": 9.18951
+  },
+  "Septimus Severus": {
+    "city": "Leptis Magna",
+    "lat": 32.636674,
+    "lng": 14.291252
+  },
+  "Caracalla": {
+    "city": "Lugdunum",
+    "lat": 45.74906,
+    "lng": 4.84789
+  },
+  "Geta": {
+    "city": "Rome",
+    "lat": 41.89193,
+    "lng": 12.51133
+  },
+  "Macrinus": {
+    "city": "Iol Caesarea",
+    "lat": 36.605,
+    "lng": 2.19083
+  },
+  "Elagabalus": {
+    "city": "Emesa",
+    "lat": 34.72405,
+    "lng": 36.72559
+  },
+  "Severus Alexander": {
+    "city": "Arca Caesarea",
+    "lat": 36.045833,
+    "lng": 34.530556
+  },
+  "Gordian III": {
+    "city": "Rome",
+    "lat": 41.89193,
+    "lng": 12.51133
+  },
+  "Philip I": {
+    "city": "Shahba",
+    "lat": 32.85237,
+    "lng": 36.62847
+  },
+  "Trajan Decius": {
+    "city": "Budalia",
+    "lat": 44.966447,
+    "lng": 19.610106
+  },
+  "Hostilian": {
+    "city": "Sirmium",
+    "lat": 44.97639,
+    "lng": 19.61222
+  },
+  "Claudius Gothicus": {
+    "city": "Sirmium",
+    "lat": 44.97639,
+    "lng": 19.61222
+  },
+  "Quintillus": {
+    "city": "Sirmium",
+    "lat": 44.97639,
+    "lng": 19.61222
+  },
+  "Aurelian": {
+    "city": "Sirmium",
+    "lat": 44.97639,
+    "lng": 19.61222
+  },
+  "Tacitus": {
+    "city": "Interamna Nahars",
+    "lat": 42.561442,
+    "lng": 12.646998
+  },
+  "Probus": {
+    "city": "Sirmium",
+    "lat": 44.97639,
+    "lng": 19.61222
+  },
+  "Carus": {
+    "city": "Narbo",
+    "lat": 43.18396,
+    "lng": 3.00141
+  },
+  "Diocletian": {
+    "city": "Salona",
+    "lat": 43.5432,
+    "lng": 16.49314
+  },
+  "Maximian": {
+    "city": "Sirmium",
+    "lat": 44.97639,
+    "lng": 19.61222
+  },
+  "Constantius I": {
+    "city": "Dardania",
+    "lat": 42.0166,
+    "lng": 21.392067
+  },
+  "Galerius": {
+    "city": "Romuliana",
+    "lat": 43.899167,
+    "lng": 22.185
+  },
+  "Constantine the Great": {
+    "city": "Naissus",
+    "lat": 43.316295,
+    "lng": 21.893884
+  },
+  "Licinius I": {
+    "city": "Felix Romuliana",
+    "lat": 43.899167,
+    "lng": 22.185
+  },
+  "Constantine II": {
+    "city": "Arelate",
+    "lat": 43.67681,
+    "lng": 4.63031
+  },
+  "Consantius II": {
+    "city": "Sirmium",
+    "lat": 44.97639,
+    "lng": 19.61222
+  },
+  "Julian": {
+    "city": "Constantinople",
+    "lat": 41.01384,
+    "lng": 28.94966
+  },
+  "Jovian": {
+    "city": "Singidunum",
+    "lat": 44.80401,
+    "lng": 20.46513
+  },
+  "Valentinian I": {
+    "city": "Cibalae",
+    "lat": 45.28833,
+    "lng": 18.80472
+  },
+  "Valens": {
+    "city": "Cibalae",
+    "lat": 45.28833,
+    "lng": 18.80472
+  },
+  "Gratian": {
+    "city": "Sirmium",
+    "lat": 44.97639,
+    "lng": 19.61222
+  },
+  "Valentinian II": {
+    "city": "Milan",
+    "lat": 45.46427,
+    "lng": 9.18951
+  },
+  "Theodosius I": {
+    "city": "Cauca",
+    "lat": 41.21767,
+    "lng": -4.52145
+  }
+}
