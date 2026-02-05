@@ -17,6 +17,10 @@
 !/public/icons/
 !/public/icons/*
 !/public/world-110m.geojson
+!/public/static/
+!/public/static/*
+!/public/page-data/
+!/public/page-data/*
 
 # misc
 .DS_Store

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react"
 import * as d3 from "d3"
+import { withPrefix } from "gatsby"
 
 const BirthplaceMap = (props) => {
     const chartRef = useRef(null)
@@ -83,7 +84,7 @@ const BirthplaceMap = (props) => {
         // Load coastlines/land
         let world = null
         try {
-            world = await d3.json("/world-110m.geojson")
+            world = await d3.json(withPrefix("/world-110m.geojson"))
         } catch (err) {
             world = null
         }
