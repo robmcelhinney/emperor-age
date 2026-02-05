@@ -7,6 +7,7 @@ const BarChart = (props) => {
     const [sortBy, setSortBy] = useState("chronological")
     const [filterDynasty, setFilterDynasty] = useState("all")
     const chartRef = useRef(null)
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 640
 
     useEffect(() => {
         createBarChart()
@@ -70,8 +71,39 @@ const BarChart = (props) => {
             },
         )
 
-        // Create dynasty color scale
+        const parseReignStart = (row) => {
+            const startRaw = row.reign_start || row.birth
+            const endRaw = row.reign_end || row.death
+            if (!startRaw || !endRaw) return null
+            const startYear = parseInt(startRaw.split("-")[0], 10)
+            const endYear = parseInt(endRaw.split("-")[0], 10)
+            if (Number.isNaN(startYear) || Number.isNaN(endYear)) return null
+            const year = startYear > endYear ? -(startYear - 1) : startYear
+            const date = new Date(Date.UTC(0, 0, 1))
+            date.setUTCFullYear(year)
+            return date
+        }
+
+        // Create dynasty color scale (chronological order)
+        const dynastyStart = new Map()
+        data.forEach((row) => {
+            const dynasty = row.dynasty || "Unknown"
+            const start = parseReignStart(row)
+            if (!start) return
+            const existing = dynastyStart.get(dynasty)
+            if (!existing || start < existing) {
+                dynastyStart.set(dynasty, start)
+            }
+        })
         let dynasties = [...new Set(data.map((d) => d.dynasty || "Unknown"))]
+        dynasties.sort((a, b) => {
+            const da = dynastyStart.get(a)
+            const db = dynastyStart.get(b)
+            if (da && db) return da - db
+            if (da) return -1
+            if (db) return 1
+            return a.localeCompare(b)
+        })
         let dynasty_scale = d3
             .scaleOrdinal()
             .domain(dynasties)
@@ -110,6 +142,8 @@ const BarChart = (props) => {
         }
         if (sortBy === "reign_length") {
             keys = ["Emperor"]
+        } else if (sortBy === "age") {
+            keys = ["Pre Emperor", "Emperor", "Post Emperor"]
         }
         data.forEach(function (d) {
             d.total = 0
@@ -147,14 +181,14 @@ const BarChart = (props) => {
 
         data = filteredData
 
-        const legendWidth = 180
+        const legendWidth = isMobile ? 20 : 320
         let margin = {
             top: 20,
-            right: 20 + legendWidth,
+            right: isMobile ? 10 : 20 + legendWidth,
             bottom: 40,
-            left: 30,
+            left: isMobile ? 20 : 30,
         }
-        const barStep = 14
+        const barStep = isMobile ? 18 : 14
         const height = Math.max(520, data.length * barStep)
         let width = 100
         if (chartRef.current) {
@@ -162,10 +196,15 @@ const BarChart = (props) => {
         } else if (typeof window !== `undefined`) {
             width = window.innerWidth - margin.left - margin.right
         }
+        if (width < 240) {
+            width = 240
+        }
         if (width > 1440) {
             width = width - (width - 1000)
         }
-        const viewbox_width = Math.max(500, width + margin.left + margin.right)
+        const viewbox_width = isMobile
+            ? width + margin.left + margin.right
+            : Math.max(500, width + margin.left + margin.right)
         const viewbox_height = height + margin.top + margin.bottom
 
         // Create tooltip
@@ -178,7 +217,7 @@ const BarChart = (props) => {
             .style("color", "white")
             .style("border-radius", "4px")
             .style("pointer-events", "none")
-            .style("font-size", "16px")
+            .style("font-size", isMobile ? "16px" : "14px")
             .style("line-height", "1.35")
             .style("max-width", "320px")
             .style("z-index", "1000")
@@ -339,14 +378,14 @@ const BarChart = (props) => {
             .style("fill", function (d) {
                 return dynasty_scale(d.dynasty || "Unknown")
             })
-            .style("opacity", 0.15)
+            .style("opacity", 0.25)
             .on("mousemove", moveTooltip)
             .on("mouseover", function (event, d) {
-                d3.select(this).style("opacity", 0.25)
+                d3.select(this).style("opacity", 0.35)
                 showTooltip(event, d)
             })
             .on("mouseout", function () {
-                d3.select(this).style("opacity", 0.15)
+                d3.select(this).style("opacity", 0.25)
                 hideTooltip()
             })
 
@@ -406,26 +445,93 @@ const BarChart = (props) => {
             .attr("font-size", "11px")
             .attr("text-anchor", "middle")
 
-        // LEGEND: DYNASTY
-        let dynasty_keys = dynasties.slice()
-        const causeLegendStartY = Legends.createDynastyLegend(
-            dynasty_scale,
-            g,
-            width,
-            dynasty_keys,
-            x,
-        )
+        if (!isMobile) {
+            // LEGEND: Life Segments
+            Legends.createRectLegend(z, g, width, keys, x, {
+                fontSize: "0.78em",
+                rowStep: 12,
+            })
 
-        let cause_death = d3.scaleOrdinal().range(cause_values)
-        Legends.createCircleLegend(
-            z,
-            g,
-            width,
-            cause_death,
-            cause_keys,
-            x,
-            causeLegendStartY,
-        )
+            // LEGEND: DYNASTY
+            let dynasty_keys = dynasties.slice()
+            const causeLegendStartY = Legends.createDynastyLegend(
+                dynasty_scale,
+                g,
+                width,
+                dynasty_keys,
+                x,
+                {
+                    fontSize: "0.78em",
+                    rowStep: 16,
+                    baseY: 90,
+                },
+            )
+
+            let cause_death = d3.scaleOrdinal().range(cause_values)
+            Legends.createCircleLegend(
+                z,
+                g,
+                width,
+                cause_death,
+                cause_keys,
+                x,
+                causeLegendStartY,
+                {
+                    fontSize: "0.78em",
+                    rowStep: 16,
+                },
+            )
+        }
+    }
+
+    const segmentLabels = {
+        "Pre Emperor": "Pre-Emperor",
+        Emperor: "Reign",
+        "Post Emperor": "Post-Emperor",
+    }
+    const causeIcons = {
+        Assassination: "🗡️",
+        Suicide: "🍷",
+        "Natural Causes": "🍂",
+        "Died in Battle": "⚔️",
+        Execution: "🪓",
+        Captivity: "⛓️",
+        Unknown: "❔",
+    }
+    const parseReignStart = (row) => {
+        const startRaw = row.reign_start || row.birth
+        const endRaw = row.reign_end || row.death
+        if (!startRaw || !endRaw) return null
+        const startYear = parseInt(startRaw.split("-")[0], 10)
+        const endYear = parseInt(endRaw.split("-")[0], 10)
+        if (Number.isNaN(startYear) || Number.isNaN(endYear)) return null
+        const year = startYear > endYear ? -(startYear - 1) : startYear
+        const date = new Date(Date.UTC(0, 0, 1))
+        date.setUTCFullYear(year)
+        return date
+    }
+    const dynastyStart = new Map()
+    props.data.forEach((row) => {
+        const dynasty = row.dynasty || "Unknown"
+        const start = parseReignStart(row)
+        if (!start) return
+        const existing = dynastyStart.get(dynasty)
+        if (!existing || start < existing) dynastyStart.set(dynasty, start)
+    })
+    const dynastyKeys = [
+        ...new Set(props.data.map((d) => d.dynasty || "Unknown")),
+    ].sort((a, b) => {
+        const da = dynastyStart.get(a)
+        const db = dynastyStart.get(b)
+        if (da && db) return da - db
+        if (da) return -1
+        if (db) return 1
+        return a.localeCompare(b)
+    })
+
+    let lifeSegments = ["Pre Emperor", "Emperor", "Post Emperor"]
+    if (sortBy === "reign_length") {
+        lifeSegments = ["Emperor"]
     }
 
     return (
@@ -553,10 +659,64 @@ const BarChart = (props) => {
                 ref={chartRef}
                 style={{
                     position: "relative",
-                    // maxHeight: "80vh",
+                    maxHeight: "70vh",
                     overflowY: "auto",
                 }}
             />
+            {isMobile && (
+                <div style={{ padding: "12px 20px 0 20px" }}>
+                    <div style={{ fontWeight: "bold", marginBottom: "6px" }}>
+                        Life Segments
+                    </div>
+                    {lifeSegments.map((k) => (
+                        <div key={k} style={{ display: "flex", gap: "8px" }}>
+                            <span
+                                style={{
+                                    width: "12px",
+                                    height: "12px",
+                                    background:
+                                        k === "Pre Emperor"
+                                            ? "#38b3fa"
+                                            : k === "Emperor"
+                                              ? "#800080"
+                                              : "#748091",
+                                    display: "inline-block",
+                                }}
+                            />
+                            <span>{segmentLabels[k]}</span>
+                        </div>
+                    ))}
+
+                    <div style={{ fontWeight: "bold", margin: "10px 0 6px" }}>
+                        Dynasty (background)
+                    </div>
+                    {dynastyKeys.map((d) => (
+                        <div key={d} style={{ display: "flex", gap: "8px" }}>
+                            <span
+                                style={{
+                                    width: "12px",
+                                    height: "12px",
+                                    background:
+                                        constClass.DYNASTY_COLOUR[d] ||
+                                        constClass.DYNASTY_COLOUR["Unknown"],
+                                    display: "inline-block",
+                                }}
+                            />
+                            <span>{d}</span>
+                        </div>
+                    ))}
+
+                    <div style={{ fontWeight: "bold", margin: "10px 0 6px" }}>
+                        Cause of Death
+                    </div>
+                    {Object.keys(constClass.CAUSE_COLOUR).map((c) => (
+                        <div key={c} style={{ display: "flex", gap: "8px" }}>
+                            <span>{causeIcons[c] || "•"}</span>
+                            <span>{c}</span>
+                        </div>
+                    ))}
+                </div>
+            )}
         </div>
     )
 }

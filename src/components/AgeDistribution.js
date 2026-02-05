@@ -26,10 +26,7 @@ const AgeDistribution = (props) => {
             .map((d) => ({
                 name: d.name,
                 dynasty: d.dynasty || "Unknown",
-                age:
-                    d["Pre Emperor"] +
-                    d["Emperor"] +
-                    (d["Post Emperor"] || 0),
+                age: d["Pre Emperor"] + d["Emperor"] + (d["Post Emperor"] || 0),
                 cause: d.cause,
                 image: d.image || null,
             }))
@@ -39,23 +36,36 @@ const AgeDistribution = (props) => {
             new Set(nodes.map((d) => d.dynasty)),
         ).sort()
 
-        const margin = { top: 20, right: 20, bottom: 40, left: 140 }
+        const isMobile =
+            typeof window !== "undefined" && window.innerWidth < 640
+        const margin = {
+            top: 20,
+            right: 20,
+            bottom: 40,
+            left: isMobile ? 90 : 140,
+        }
         let width = chartRef.current.clientWidth - margin.left - margin.right
         if (width > 1440) {
             width = width - (width - 1000)
         }
         const height = Math.max(260, dynasties.length * 28)
-        const viewboxWidth = Math.max(600, width + margin.left + margin.right)
+        const viewboxWidth = isMobile
+            ? Math.max(900, width + margin.left + margin.right)
+            : Math.max(600, width + margin.left + margin.right)
         const viewboxHeight = height + margin.top + margin.bottom
 
         const svg = container
             .append("svg")
             .attr("viewBox", "0 0 " + viewboxWidth + " " + viewboxHeight)
             .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("width", isMobile ? viewboxWidth : null)
 
         const g = svg
             .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+            .attr(
+                "transform",
+                "translate(" + margin.left + "," + margin.top + ")",
+            )
 
         const x = d3
             .scaleLinear()
@@ -72,11 +82,14 @@ const AgeDistribution = (props) => {
         g.append("g")
             .attr("class", "axis")
             .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x).tickFormat((d) => d + " yrs").tickSize(-height))
+            .call(
+                d3
+                    .axisBottom(x)
+                    .tickFormat((d) => d + " yrs")
+                    .tickSize(-height),
+            )
 
-        g.append("g")
-            .attr("class", "axis")
-            .call(d3.axisLeft(y))
+        g.append("g").attr("class", "axis").call(d3.axisLeft(y))
 
         const tooltip = container
             .append("div")
@@ -111,7 +124,9 @@ const AgeDistribution = (props) => {
             .force("x", d3.forceX((d) => x(d.age)).strength(1))
             .force(
                 "y",
-                d3.forceY((d) => y(d.dynasty) + y.bandwidth() / 2).strength(0.8),
+                d3
+                    .forceY((d) => y(d.dynasty) + y.bandwidth() / 2)
+                    .strength(0.8),
             )
             .force("collide", d3.forceCollide(6))
             .stop()
@@ -125,14 +140,59 @@ const AgeDistribution = (props) => {
         const applyHighlight = (dynasty) => {
             g.selectAll("circle")
                 .attr("opacity", (node) =>
-                    dynasty && node.dynasty === dynasty ? 1 : dynasty ? 0.15 : 0.9,
+                    dynasty && node.dynasty === dynasty
+                        ? 1
+                        : dynasty
+                          ? 0.15
+                          : 0.9,
                 )
                 .attr("stroke-width", (node) =>
                     dynasty && node.dynasty === dynasty ? 1.2 : 0.3,
                 )
         }
 
-        const circles = g.append("g")
+        let hideTimer = null
+        const showTip = (event, d) => {
+            if (hideTimer) {
+                clearTimeout(hideTimer)
+                hideTimer = null
+            }
+            tooltip.transition().duration(150).style("opacity", 1)
+            const imageHtml = d.image
+                ? '<img src="' +
+                  d.image +
+                  '" alt="' +
+                  d.name +
+                  '" style="width:64px;height:64px;object-fit:cover;border-radius:4px;flex:0 0 auto;" />'
+                : ""
+            const detailHtml =
+                "<strong>" +
+                d.name +
+                "</strong><br/>" +
+                "Dynasty: " +
+                d.dynasty +
+                "<br/>" +
+                "Age at death: " +
+                d.age +
+                " years<br/>" +
+                "Cause of death: " +
+                d.cause
+            tooltip.html(
+                '<div style="display:flex;gap:10px;align-items:center;">' +
+                    imageHtml +
+                    '<div style="min-width:0;">' +
+                    detailHtml +
+                    "</div></div>",
+            )
+            positionTooltip(event)
+        }
+
+        const hideTip = () => {
+            tooltip.transition().duration(150).style("opacity", 0)
+        }
+
+        const circles = g
+            .append("g")
             .selectAll("circle")
             .data(nodes)
             .enter()
@@ -153,46 +213,24 @@ const AgeDistribution = (props) => {
             .attr("data-dynasty", (d) => d.dynasty)
             .on("mouseover", function (event, d) {
                 applyHighlight(lockedDynasty || d.dynasty)
-                tooltip.transition().duration(200).style("opacity", 1)
-                const imageHtml = d.image
-                    ? '<img src="' +
-                      d.image +
-                      '" alt="' +
-                      d.name +
-                      '" style="width:64px;height:64px;object-fit:cover;border-radius:4px;flex:0 0 auto;" />'
-                    : ""
-                const detailHtml =
-                    "<strong>" +
-                    d.name +
-                    "</strong><br/>" +
-                    "Dynasty: " +
-                    d.dynasty +
-                    "<br/>" +
-                    "Age at death: " +
-                    d.age +
-                    " years<br/>" +
-                    "Cause of death: " +
-                    d.cause
-                tooltip.html(
-                    '<div style="display:flex;gap:10px;align-items:center;">' +
-                        imageHtml +
-                        '<div style="min-width:0;">' +
-                        detailHtml +
-                        "</div></div>",
-                )
-                positionTooltip(event)
+                showTip(event, d)
             })
             .on("mousemove", function (event) {
                 positionTooltip(event)
             })
             .on("mouseout", function () {
                 applyHighlight(lockedDynasty)
-                tooltip.transition().duration(200).style("opacity", 0)
+                hideTip()
             })
             .on("click", function (event, d) {
                 event.stopPropagation()
                 lockedDynasty = lockedDynasty === d.dynasty ? null : d.dynasty
                 applyHighlight(lockedDynasty)
+            })
+            .on("touchstart", function (event, d) {
+                event.preventDefault()
+                showTip(event, d)
+                hideTimer = setTimeout(() => hideTip(), 2000)
             })
 
         svg.on("click", function () {
@@ -206,7 +244,8 @@ const AgeDistribution = (props) => {
             <div style={{ padding: "0 20px 10px 20px" }}>
                 <h2 style={{ margin: 0 }}>Age Distribution</h2>
                 <p style={{ margin: "6px 0 0 0" }}>
-                    Each emperor is a dot placed by age at death, grouped by dynasty.
+                    Each emperor is a dot placed by age at death, grouped by
+                    dynasty.
                 </p>
             </div>
             <div
@@ -216,6 +255,7 @@ const AgeDistribution = (props) => {
                     position: "relative",
                     maxHeight: "70vh",
                     overflowY: "auto",
+                    overflowX: "auto",
                 }}
             />
         </div>

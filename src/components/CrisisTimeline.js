@@ -87,12 +87,16 @@ const CrisisTimeline = (props) => {
         })
 
         const height = Math.max(260, lanes.length * rowHeight + 40)
+        const isMobile =
+            typeof window !== "undefined" && window.innerWidth < 640
         let width = chartRef.current.clientWidth - margin.left - margin.right
         if (width > 1440) {
             width = width - (width - 1000)
         }
 
-        const viewboxWidth = Math.max(500, width + margin.left + margin.right)
+        const viewboxWidth = isMobile
+            ? width + margin.left + margin.right
+            : Math.max(500, width + margin.left + margin.right)
         const viewboxHeight = height + margin.top + margin.bottom
 
         const tooltip = container
@@ -154,9 +158,11 @@ const CrisisTimeline = (props) => {
                 d3
                     .axisBottom(x)
                     .tickFormat((d) => formatYear(d))
-                    .ticks(10)
+                    .ticks(isMobile ? 6 : 10)
                     .tickSize(-height),
             )
+            .selectAll("text")
+            .style("font-size", isMobile ? "11px" : "12px")
 
         const positionTooltip = (event) => {
             const containerNode = container.node()
@@ -184,6 +190,48 @@ const CrisisTimeline = (props) => {
             .attr("fill", (d) => (d % 2 === 0 ? "#f7f7f7" : "#ffffff"))
             .attr("opacity", 0.6)
 
+        let hideTimer = null
+        const showTip = (event, d) => {
+            if (hideTimer) {
+                clearTimeout(hideTimer)
+                hideTimer = null
+            }
+            tooltip.transition().duration(150).style("opacity", 1)
+            const imageHtml = d.image
+                ? '<img src="' +
+                  d.image +
+                  '" alt="' +
+                  d.name +
+                  '" style="width:64px;height:64px;object-fit:cover;border-radius:4px;flex:0 0 auto;" />'
+                : ""
+            const detailHtml =
+                "<strong>" +
+                d.name +
+                "</strong><br/>" +
+                "Dynasty: " +
+                (d.dynasty || "Unknown") +
+                "<br/>" +
+                "Reign: " +
+                formatYear(d.start) +
+                " – " +
+                formatYear(d.end) +
+                "<br/>" +
+                "Cause of death: " +
+                d.cause
+            tooltip.html(
+                '<div style="display:flex;gap:10px;align-items:center;">' +
+                    imageHtml +
+                    '<div style="min-width:0;">' +
+                    detailHtml +
+                    "</div></div>",
+            )
+            positionTooltip(event)
+        }
+
+        const hideTip = () => {
+            tooltip.transition().duration(150).style("opacity", 0)
+        }
+
         const bars = g.append("g")
             .selectAll("rect")
             .data(data)
@@ -199,43 +247,23 @@ const CrisisTimeline = (props) => {
             .attr("stroke-width", 0.4)
             .on("mouseover", function (event, d) {
                 d3.select(this).attr("stroke-width", 1.2)
-                tooltip.transition().duration(200).style("opacity", 1)
-                const imageHtml = d.image
-                    ? '<img src="' +
-                      d.image +
-                      '" alt="' +
-                      d.name +
-                      '" style="width:64px;height:64px;object-fit:cover;border-radius:4px;flex:0 0 auto;" />'
-                    : ""
-                const detailHtml =
-                    "<strong>" +
-                    d.name +
-                    "</strong><br/>" +
-                    "Dynasty: " +
-                    (d.dynasty || "Unknown") +
-                    "<br/>" +
-                    "Reign: " +
-                    formatYear(d.start) +
-                    " – " +
-                    formatYear(d.end) +
-                    "<br/>" +
-                    "Cause of death: " +
-                    d.cause
-                tooltip.html(
-                    '<div style="display:flex;gap:10px;align-items:center;">' +
-                        imageHtml +
-                        '<div style="min-width:0;">' +
-                        detailHtml +
-                        "</div></div>",
-                )
-                positionTooltip(event)
+                showTip(event, d)
             })
             .on("mousemove", function (event) {
                 positionTooltip(event)
             })
             .on("mouseout", function () {
                 d3.select(this).attr("stroke-width", 0.4)
-                tooltip.transition().duration(200).style("opacity", 0)
+                hideTip()
+            })
+            .on("touchstart", function (event, d) {
+                event.preventDefault()
+                showTip(event, d)
+                hideTimer = setTimeout(() => hideTip(), 2000)
+            })
+            .on("click", function (event, d) {
+                showTip(event, d)
+                hideTimer = setTimeout(() => hideTip(), 2000)
             })
 
         // Labels for longer reigns to improve identification

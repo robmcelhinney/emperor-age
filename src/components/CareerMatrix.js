@@ -63,25 +63,38 @@ const CareerMatrix = (props) => {
         })
 
         const maxCount = d3.max(cells, (d) => d.count) || 1
+        const isMobile =
+            typeof window !== "undefined" && window.innerWidth < 640
 
-        const margin = { top: 20, right: 20, bottom: 50, left: 220 }
+        const margin = {
+            top: 20,
+            right: 20,
+            bottom: 50,
+            left: isMobile ? 120 : 220,
+        }
         let width = chartRef.current.clientWidth - margin.left - margin.right
         if (width > 1440) {
             width = width - (width - 1000)
         }
         const cellSize = 26
         const height = Math.max(220, riseValues.length * cellSize)
-        const viewboxWidth = Math.max(700, width + margin.left + margin.right)
+        const viewboxWidth = isMobile
+            ? Math.max(900, width + margin.left + margin.right)
+            : Math.max(700, width + margin.left + margin.right)
         const viewboxHeight = height + margin.top + margin.bottom
 
         const svg = container
             .append("svg")
             .attr("viewBox", "0 0 " + viewboxWidth + " " + viewboxHeight)
             .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("width", isMobile ? viewboxWidth : null)
 
         const g = svg
             .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+            .attr(
+                "transform",
+                "translate(" + margin.left + "," + margin.top + ")",
+            )
 
         const x = d3
             .scaleBand()
@@ -95,11 +108,11 @@ const CareerMatrix = (props) => {
             .range([0, height])
             .padding(0.08)
 
-        const color = d3.scaleSequential(d3.interpolateReds).domain([0, maxCount])
+        const color = d3
+            .scaleSequential(d3.interpolateReds)
+            .domain([0, maxCount])
 
-        g.append("g")
-            .attr("class", "axis")
-            .call(d3.axisLeft(y))
+        g.append("g").attr("class", "axis").call(d3.axisLeft(y))
 
         g.append("g")
             .attr("class", "axis")
@@ -137,6 +150,30 @@ const CareerMatrix = (props) => {
             tooltip.style("left", tx + "px").style("top", ty + "px")
         }
 
+        let hideTimer = null
+        const showTip = (event, d) => {
+            if (hideTimer) {
+                clearTimeout(hideTimer)
+                hideTimer = null
+            }
+            tooltip
+                .style("opacity", 1)
+                .html(
+                    "<strong>" +
+                        d.rise +
+                        "</strong> → <strong>" +
+                        d.cause +
+                        "</strong><br/>" +
+                        d.count +
+                        " emperors",
+                )
+            positionTooltip(event)
+        }
+
+        const hideTip = () => {
+            tooltip.style("opacity", 0)
+        }
+
         g.append("g")
             .selectAll("rect")
             .data(cells)
@@ -150,24 +187,18 @@ const CareerMatrix = (props) => {
             .attr("stroke", "#ffffff")
             .attr("stroke-width", 1)
             .on("mouseover", function (event, d) {
-                tooltip
-                    .style("opacity", 1)
-                    .html(
-                        "<strong>" +
-                            d.rise +
-                            "</strong> → <strong>" +
-                            d.cause +
-                            "</strong><br/>" +
-                            d.count +
-                            " emperors",
-                    )
-                positionTooltip(event)
+                showTip(event, d)
             })
             .on("mousemove", function (event) {
                 positionTooltip(event)
             })
             .on("mouseout", function () {
-                tooltip.style("opacity", 0)
+                hideTip()
+            })
+            .on("touchstart", function (event, d) {
+                event.preventDefault()
+                showTip(event, d)
+                hideTimer = setTimeout(() => hideTip(), 2000)
             })
 
         g.append("g")
@@ -188,10 +219,14 @@ const CareerMatrix = (props) => {
             <div style={{ padding: "0 20px 10px 20px" }}>
                 <h2 style={{ margin: 0 }}>Career Matrix</h2>
                 <p style={{ margin: "6px 0 0 0" }}>
-                    Rise to power vs. cause of death. Darker cells mean more emperors.
+                    Rise to power vs. cause of death. Darker cells mean more
+                    emperors.
                 </p>
             </div>
-            <div ref={chartRef} style={{ position: "relative" }} />
+            <div
+                ref={chartRef}
+                style={{ position: "relative", overflowX: "auto" }}
+            />
         </div>
     )
 }
